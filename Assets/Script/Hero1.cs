@@ -17,7 +17,13 @@ public class Hero1 : MonoBehaviour
     /// </summary>
     private Animator anim;
 
-    public float speedX;
+    public float walkSpeed;
+    public float runSpeed;
+    /// <summary>
+    /// Совпадает ли фактическое направление движения (нажатие на клавиатуре) с
+    /// действительным (направление спрайта игрока)
+    /// </summary>
+    public bool isSameDirections;
     /// <summary>
     /// Мощность прыжка
     /// </summary>
@@ -31,22 +37,25 @@ public class Hero1 : MonoBehaviour
     /// </summary>
     public Transform groundCheckPoint;
     /// <summary>
-    /// Радиус проверки нахождения игрока на земле
-    /// </summary>
-    const float groundCheckingRadius = 0.2f;
-    /// <summary>
     /// Слой, который является "землёй"
     /// </summary>
     public LayerMask groundLayer;
+    /// <summary>
+    /// Радиус проверки нахождения игрока на земле
+    /// </summary>
+    const float groundCheckingRadius = 0.2f;
+
+    SpriteRenderer spriteRenderer;
 
     /// <summary>
     /// Перечисление состояний движения
     /// </summary>
-    private enum MovementStatuses
+    public enum MovementStatuses
     {
+        Jump = -1,
         Idle = 0,
-        Backward = -1,
-        Forward = 1
+        Walk = 1,
+        Run = 2
     }
 
     /// <summary>
@@ -55,27 +64,34 @@ public class Hero1 : MonoBehaviour
     /// <param name="status">Текущий статус передвижения</param>
     private void Movement(MovementStatuses status)
     {
-        if(status.Equals(MovementStatuses.Idle)){
-            anim.SetBool("isRunning", false);
-            return;
-        }
-
-        transform.Translate(new Vector2(status.Equals(MovementStatuses.Forward) ? speedX : -speedX, 0) * Time.deltaTime);
-
-        if (status.Equals(MovementStatuses.Forward) ? gameObject.transform.localScale.x < 0 : gameObject.transform.localScale.x > 0)
+        switch (status)
         {
-            // Для справки: здесь происходит умножение текущего вектора на дополнительный
-            //              В данном случае на вектор направления движения - (x, y, z)
-            gameObject.transform.localScale = Vector3.Scale(gameObject.transform.localScale, new Vector3(-1, 1, 1));
-        }
+            case MovementStatuses.Idle: 
+                anim.SetBool("isRunning", false);
+                break;
+            case MovementStatuses.Run:
+            case MovementStatuses.Walk:
+                if (isSameDirections)
+                {
+                    spriteRenderer.flipX = !spriteRenderer.flipX;
+                }
 
-        anim.SetBool("isRunning", true);
+                float movementSpeed = status.Equals(MovementStatuses.Walk) ? walkSpeed : runSpeed;
+                transform.Translate(new Vector2(movementSpeed, 0) * Input.GetAxis("Horizontal") * Time.deltaTime);
+
+                anim.SetBool("isRunning", true);
+                break;
+            case MovementStatuses.Jump:
+                rigidBody.AddForce(new Vector2(0, jumpPower));
+                break;
+        }
     }
 
     void Start()
     {
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -87,14 +103,14 @@ public class Hero1 : MonoBehaviour
     {
         if (isOnGround)
         {
-            if (Input.GetKey(KeyCode.D)) Movement(MovementStatuses.Forward);
-            else if (Input.GetKey(KeyCode.A)) Movement(MovementStatuses.Backward);
+            if (Input.GetAxis("Horizontal") != 0)
+            {
+                isSameDirections = Input.GetAxis("Horizontal") > 0 == spriteRenderer.flipX;
+                Movement(MovementStatuses.Walk);
+            }
             else Movement(MovementStatuses.Idle);
 
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                rigidBody.AddForce(new Vector2(0, jumpPower));
-            }
+            if (Input.GetKeyDown(KeyCode.W)) Movement(MovementStatuses.Jump);
         }
     }
 }
