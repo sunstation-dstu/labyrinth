@@ -2264,7 +2264,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 5
   runSpeed: 10
-  movementDirection: 1
   jumpPower: 10000
   isOnGround: 0
   groundCheckPoint: {fileID: 1458096760}
