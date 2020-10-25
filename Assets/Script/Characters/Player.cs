@@ -6,24 +6,25 @@
 /// <remarks>
 /// Класс включает в себя анимацию персонажа
 /// </remarks>
-public class Hero1 : MonoBehaviour
+public class Player : MonoBehaviour
 {
     /// <summary>
     /// TODO
     /// </summary>
     Rigidbody2D rigidBody;
-    /// <summary>
-    /// Скорость игрока
-    /// </summary>
+
     private Animator anim;
 
-    public float walkSpeed;
-    public float runSpeed;
+    SpriteRenderer spriteRenderer;
+
     /// <summary>
-    /// Совпадает ли фактическое направление движения (нажатие на клавиатуре) с
-    /// действительным (направление спрайта игрока)
+    /// Скорость игрока при ходьбе
     /// </summary>
-    public bool isSameDirections;
+    public float walkSpeed;
+    /// <summary>
+    /// Скорость игрока при беге
+    /// </summary>
+    public float runSpeed;
     /// <summary>
     /// Мощность прыжка
     /// </summary>
@@ -45,7 +46,11 @@ public class Hero1 : MonoBehaviour
     /// </summary>
     const float groundCheckingRadius = 0.2f;
 
-    SpriteRenderer spriteRenderer;
+    /// <summary>
+    /// Совпадает ли фактическое направление движения (нажатие на клавиатуре) с
+    /// действительным (направление спрайта игрока)
+    /// </summary>
+    bool isSameDirections;
 
     /// <summary>
     /// Перечисление состояний движения
