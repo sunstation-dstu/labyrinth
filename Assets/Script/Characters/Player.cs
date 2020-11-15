@@ -75,14 +75,22 @@ public class Player : MonoBehaviour
                anim.SetBool("isRunning", false);
                 break;
             case MovementStatuses.Run:
+                if (isSameDirections)
+                {
+                    spriteRenderer.flipX = !spriteRenderer.flipX;
+                }
+
+                rigidBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * runSpeed, rigidBody.velocity.y);
+
+                anim.SetBool("isRunning", true);
+                break;
             case MovementStatuses.Walk:
                 if (isSameDirections)
                 {
                     spriteRenderer.flipX = !spriteRenderer.flipX;
                 }
 
-                float movementSpeed = status.Equals(MovementStatuses.Walk) ? walkSpeed : runSpeed;
-                //transform.Translate(new Vector2(movementSpeed, 0) * Input.GetAxis("Horizontal") * Time.deltaTime);
+                //float movementSpeed = status.Equals(MovementStatuses.Walk) ? walkSpeed : runSpeed;
                 rigidBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * walkSpeed, rigidBody.velocity.y);
 
                 anim.SetBool("isRunning", true);
@@ -106,14 +114,19 @@ public class Player : MonoBehaviour
     {
         if (isOnGround)
         {
-            if (Input.GetAxis("Horizontal") != 0)
+            if (Input.GetAxis("Horizontal") != 0 && !Input.GetKey(KeyCode.LeftShift))
             {
                 isSameDirections = Input.GetAxis("Horizontal") > 0 == spriteRenderer.flipX;
                 Movement(MovementStatuses.Walk);
             }
-            else Movement(MovementStatuses.Idle);
+            else if (Input.GetAxis("Horizontal") != 0 && Input.GetKey(KeyCode.LeftShift))
+            {
+                isSameDirections = Input.GetAxis("Horizontal") > 0 == spriteRenderer.flipX;
+                Movement(MovementStatuses.Run);
+            } else Movement(MovementStatuses.Idle);
 
             if (Input.GetKeyDown(KeyCode.W)) rigidBody.AddForce(new Vector2(0, jumpPower));
+            if ((Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)) || (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow))) anim.SetBool("isRunning", false);
         }
     }
 }
