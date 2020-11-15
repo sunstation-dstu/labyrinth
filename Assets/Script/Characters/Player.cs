@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
         switch (status)
         {
             case MovementStatuses.Idle: 
-                anim.SetBool("isRunning", false);
+               anim.SetBool("isRunning", false);
                 break;
             case MovementStatuses.Run:
             case MovementStatuses.Walk:
@@ -82,12 +82,10 @@ public class Player : MonoBehaviour
                 }
 
                 float movementSpeed = status.Equals(MovementStatuses.Walk) ? walkSpeed : runSpeed;
-                transform.Translate(new Vector2(movementSpeed, 0) * Input.GetAxis("Horizontal") * Time.deltaTime);
+                //transform.Translate(new Vector2(movementSpeed, 0) * Input.GetAxis("Horizontal") * Time.deltaTime);
+                rigidBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * walkSpeed, rigidBody.velocity.y);
 
                 anim.SetBool("isRunning", true);
-                break;
-            case MovementStatuses.Jump:
-                rigidBody.AddForce(new Vector2(0, jumpPower));
                 break;
         }
     }
@@ -115,7 +113,7 @@ public class Player : MonoBehaviour
             }
             else Movement(MovementStatuses.Idle);
 
-            if (Input.GetKeyDown(KeyCode.W)) Movement(MovementStatuses.Jump);
+            if (Input.GetKeyDown(KeyCode.W)) rigidBody.AddForce(new Vector2(0, jumpPower));
         }
     }
 }
