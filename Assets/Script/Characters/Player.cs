@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 /// <summary>
 /// Класс Игрока
@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
     /// Предвижение игрока
     /// </summary>
     /// <param name="status">Текущий статус передвижения</param>
-    private void Movement(MovementStatuses status)
+    private void Movement(MovementStatuses status, float speedMultiplier = 1)
     {
         switch (status)
         {
@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
                 }
 
                 float movementSpeed = status.Equals(MovementStatuses.Walk) ? walkSpeed : runSpeed;
-                transform.Translate(new Vector2(movementSpeed, 0) * Input.GetAxis("Horizontal") * Time.deltaTime);
+                rigidBody.velocity = new Vector2(speedMultiplier * movementSpeed, rigidBody.velocity.y);
 
                 anim.SetBool("isRunning", true);
                 break;
@@ -108,14 +108,18 @@ public class Player : MonoBehaviour
     {
         if (isOnGround)
         {
-            if (Input.GetAxis("Horizontal") != 0)
+            if (Input.GetAxis("Horizontal") != 0 && !Input.GetKey(KeyCode.LeftShift))
             {
                 isSameDirections = Input.GetAxis("Horizontal") > 0 == spriteRenderer.flipX;
-                Movement(MovementStatuses.Walk);
+                Movement(MovementStatuses.Walk, Input.GetAxisRaw("Horizontal"));
             }
-            else Movement(MovementStatuses.Idle);
+            else if (Input.GetAxis("Horizontal") != 0 && Input.GetKey(KeyCode.LeftShift))
+            {
+                isSameDirections = Input.GetAxis("Horizontal") > 0 == spriteRenderer.flipX;
+                Movement(MovementStatuses.Run, Input.GetAxisRaw("Horizontal"));
+            } else Movement(MovementStatuses.Idle);
 
-            if (Input.GetKeyDown(KeyCode.W)) Movement(MovementStatuses.Jump);
+            if (Input.GetKeyDown(KeyCode.W)) rigidBody.AddForce(new Vector2(0, jumpPower));
         }
     }
 }

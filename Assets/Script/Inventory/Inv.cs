@@ -14,19 +14,13 @@ public class Inv : MonoBehaviour
     public RaycastHit2D hit;
     [Header("Список вещей")]
     public List<items> itemlist = new List<items>();
-    [Header("Ячейки инвентаря")]
-    public List<cell> celllist = new List<cell>();
     public GameObject DropItem;
     public GameObject player;
     [Header("Сила броска")]
     public float trowObj = 2f;
     private int isRight = 0;
-    public enum TypeMove
-    {
-        Other,
-        Weapon,
-        Instrument
-    }
+
+
 
 
     void Start()
@@ -34,105 +28,70 @@ public class Inv : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        if (player.transform.localScale.x > 0) isRight = 1;
-        else if (player.transform.localScale.x < 0) isRight = -1;
-        for (int i = 0; i < 5; i++)
-        {
-            if (celllist[i].iDItem != 0)
-            {
-                celllist[i].cellIcon.SetActive(true);
-                celllist[i].cellIcon.GetComponent<Image>().sprite = itemlist[celllist[i].iDItem].icon;
-            }
-            else celllist[i].cellIcon.SetActive(false);
-            if (celllist[i].isActive == true)
-            {
-                celllist[i].cellBG.SetActive(true);
-            }
-            else celllist[i].cellBG.SetActive(false);
-        }
-        if (Input.GetKey(KeyCode.Alpha1))
-        {
-            celllist[0].isActive = true;
-            celllist[1].isActive = false;
-        }
-        else if (Input.GetKey(KeyCode.Alpha2))
-        {
-            celllist[0].isActive = false;
-            celllist[1].isActive = true;
-        }
+        GameObject ic = gameObject.transform.Find("Inventory Cell").gameObject;
+        GameObject othr = ic.transform.Find("Other").gameObject;
+        GameObject gt = ic.transform.Find("Gun & Tool").gameObject;
+        cellSettings gt1 = gt.transform.Find("1").gameObject.GetComponent<cellSettings>();
+        cellSettings gt2 = gt.transform.Find("2").gameObject.GetComponent<cellSettings>();
+
+        if (player.GetComponent<SpriteRenderer>().flipX == false) isRight = 1;
+        else if (player.GetComponent<SpriteRenderer>().flipX == true) isRight = -1;
+
+
         if (Input.GetKey(KeyCode.Q))
         {
             GameObject thisDropItem;
-            if (celllist[0].iDItem != 0 && celllist[0].isActive)
+            if (gt1.iD != 0 && gt1.active)
             {
                 thisDropItem = Instantiate(DropItem, new Vector3(player.transform.position.x, player.transform.position.y), quaternion.identity);
-                thisDropItem.GetComponent<item>().id = celllist[0].iDItem;
-                thisDropItem.GetComponent<SpriteRenderer>().sprite = itemlist[celllist[0].iDItem].icon;
-                celllist[0].iDItem = 0;
+                thisDropItem.GetComponent<item>().id = gt1.iD;
+                thisDropItem.GetComponent<SpriteRenderer>().sprite = itemlist[gt1.iD].icon;
+                gt1.iD = 0;
                 thisDropItem.GetComponent<Rigidbody2D>().velocity = new Vector2(thisDropItem.transform.localScale.x * isRight, 1) * trowObj;
             }
-            if (celllist[1].iDItem != 0 && celllist[1].isActive)
+            if (gt2.iD != 0 && gt2.active)
             {
                 thisDropItem = Instantiate(DropItem, new Vector3(player.transform.position.x, player.transform.position.y), quaternion.identity);
-                thisDropItem.GetComponent<item>().id = celllist[1].iDItem;
-                thisDropItem.GetComponent<SpriteRenderer>().sprite = itemlist[celllist[1].iDItem].icon;
-                celllist[1].iDItem = 0;
+                thisDropItem.GetComponent<item>().id = gt2.iD;
+                thisDropItem.GetComponent<SpriteRenderer>().sprite = itemlist[gt2.iD].icon;
+                gt2.iD = 0;
                 thisDropItem.GetComponent<Rigidbody2D>().velocity = new Vector2(thisDropItem.transform.localScale.x * isRight, 1) * trowObj;
             }
         }
-
-        /* if (Input.GetKey(KeyCode.Q) && celllist[0].iDItem != 0)
-        {
-            GameObject thisDropItem;
-            thisDropItem = Instantiate(DropItem, new Vector3(player.transform.position.x, player.transform.position.y), quaternion.identity);
-            thisDropItem.GetComponent<item>().id = celllist[0].iDItem;
-            thisDropItem.GetComponent<SpriteRenderer>().sprite = itemlist[celllist[0].iDItem].icon;
-            celllist[0].iDItem = 0;
-            thisDropItem.GetComponent<Rigidbody2D>().velocity = new Vector2(thisDropItem.transform.localScale.x*isRight, 1) * trowObj;
-        }*/
 
 
         if (Input.GetKeyDown(KeyCode.E))
         {
             Physics2D.queriesStartInColliders = false;
-            hit = Physics2D.Raycast(player.transform.position, Vector3.right * player.transform.localScale.x, distance);
+            hit = Physics2D.Raycast(player.transform.position, Vector3.right * player.transform.localScale.x * isRight, distance);
             if (hit.collider != null && hit.collider.gameObject.layer == 11)
             {
-                GameObject itItemObj = hit.collider.gameObject;
+                  GameObject itItemObj = hit.collider.gameObject;
                   item itItem = itItemObj.GetComponent<item>();
                   bool isPickUp = false;
-                  if (celllist[0].iDItem == 0 && itemlist[itItem.id].isGun)
+                  if (gt1.iD == 0 && itemlist[itItem.id].type == items.typeMove.gun)
                   {
-                      celllist[0].iDItem = itItem.id;
+                      gt1.iD = itItem.id;
                       isPickUp = true;
                   }
-                  if (celllist[1].iDItem == 0 && itemlist[itItem.id].isInstrument)
+                  else if (gt2.iD == 0 && itemlist[itItem.id].type == items.typeMove.tool)
                   {
-                      celllist[1].iDItem = itItem.id;
+                    gt2.iD = itItem.id;
                       isPickUp = true;
                   }
-                  if (itemlist[itItem.id].isStacked && !itemlist[itItem.id].isGun && !itemlist[itItem.id].isInstrument)
+                  else if (itemlist[itItem.id].type == items.typeMove.other)
                   {
-                      for (int i = 2; i < 8; i++)
+                      for (int i = 1; i <= ic.GetComponent<UI>().childCountOther; i++)
                       {
-                          if (celllist[i].iDItem == itItem.id)
+                        string number = i.ToString();
+                        GameObject findCell = othr.transform.Find(number).gameObject;
+                        int cellID = findCell.GetComponent<cellSettings>().iD;
+                        if (cellID == 0)
                           {
-                              celllist[i].stack++;
-                              isPickUp = true;
-                              break;
-                          }
-                      }
-                  }
-                  else if (!itemlist[itItem.id].isStacked && !itemlist[itItem.id].isGun && !itemlist[itItem.id].isInstrument)
-                  {
-                      for (int i = 2; i < 8; i++)
-                      {
-                          if (celllist[i].iDItem == 0)
-                          {
-                              celllist[i].iDItem = itItem.id;
+                              findCell.GetComponent<cellSettings>().iD = itItem.id;
                               isPickUp = true;
                               break;
                           }
@@ -156,21 +115,15 @@ public class Inv : MonoBehaviour
     public class items
     {
         public Sprite icon;
-        public bool isStacked;
-        public int valueStack;
+        public enum typeMove
+        {
+            gun,
+            tool,
+            other
+        }
+        public typeMove type;
         public bool isGun;
         public bool isInstrument;
-        public TypeMove typeMove;
     }
 
-    [Serializable]
-    public class cell
-    {
-        public bool isActive;
-        public GameObject cellFront;
-        public GameObject cellIcon;
-        public GameObject cellBG;
-        public int iDItem;
-        public int stack;
-    }
 }
