@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 /// <summary>
 /// Класс Игрока
@@ -67,33 +67,27 @@ public class Player : MonoBehaviour
     /// Предвижение игрока
     /// </summary>
     /// <param name="status">Текущий статус передвижения</param>
-    private void Movement(MovementStatuses status)
+    private void Movement(MovementStatuses status, float speedMultiplier = 1)
     {
         switch (status)
         {
             case MovementStatuses.Idle: 
-               anim.SetBool("isRunning", false);
+                anim.SetBool("isRunning", false);
                 break;
             case MovementStatuses.Run:
-                if (isSameDirections)
-                {
-                    spriteRenderer.flipX = !spriteRenderer.flipX;
-                }
-
-                rigidBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * runSpeed, rigidBody.velocity.y);
-
-                anim.SetBool("isRunning", true);
-                break;
             case MovementStatuses.Walk:
                 if (isSameDirections)
                 {
                     spriteRenderer.flipX = !spriteRenderer.flipX;
                 }
 
-                //float movementSpeed = status.Equals(MovementStatuses.Walk) ? walkSpeed : runSpeed;
-                rigidBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * walkSpeed, rigidBody.velocity.y);
+                float movementSpeed = status.Equals(MovementStatuses.Walk) ? walkSpeed : runSpeed;
+                rigidBody.velocity = new Vector2(speedMultiplier * movementSpeed, rigidBody.velocity.y);
 
                 anim.SetBool("isRunning", true);
+                break;
+            case MovementStatuses.Jump:
+                rigidBody.AddForce(new Vector2(0, jumpPower));
                 break;
         }
     }
@@ -117,16 +111,15 @@ public class Player : MonoBehaviour
             if (Input.GetAxis("Horizontal") != 0 && !Input.GetKey(KeyCode.LeftShift))
             {
                 isSameDirections = Input.GetAxis("Horizontal") > 0 == spriteRenderer.flipX;
-                Movement(MovementStatuses.Walk);
+                Movement(MovementStatuses.Walk, Input.GetAxisRaw("Horizontal"));
             }
             else if (Input.GetAxis("Horizontal") != 0 && Input.GetKey(KeyCode.LeftShift))
             {
                 isSameDirections = Input.GetAxis("Horizontal") > 0 == spriteRenderer.flipX;
-                Movement(MovementStatuses.Run);
+                Movement(MovementStatuses.Run, Input.GetAxisRaw("Horizontal"));
             } else Movement(MovementStatuses.Idle);
 
             if (Input.GetKeyDown(KeyCode.W)) rigidBody.AddForce(new Vector2(0, jumpPower));
-            if ((Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)) || (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow))) anim.SetBool("isRunning", false);
         }
     }
 }
