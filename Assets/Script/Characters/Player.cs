@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Класс Игрока
@@ -104,13 +104,13 @@ public class Player : MonoBehaviour
     {
         if (isOnGround)
         {
-            if (Input.GetAxis("Horizontal") != 0 && !Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetAxisRaw("Horizontal") != 0 && !Input.GetKey(KeyCode.LeftShift))
             {
-                Movement(MovementStatuses.Walk, Input.GetAxisRaw("Horizontal"));
+                Movement(MovementStatuses.Walk, Input.GetAxis("Horizontal"));
             }
-            else if (Input.GetAxis("Horizontal") != 0 && Input.GetKey(KeyCode.LeftShift))
+            else if (Input.GetAxisRaw("Horizontal") != 0 && Input.GetKey(KeyCode.LeftShift))
             {
-                Movement(MovementStatuses.Run, Input.GetAxisRaw("Horizontal"));
+                Movement(MovementStatuses.Run, Input.GetAxis("Horizontal"));
             } else Movement(MovementStatuses.Idle);
 
             if (Input.GetKeyDown(KeyCode.W)) rigidBody.AddForce(new Vector2(0, jumpPower));
