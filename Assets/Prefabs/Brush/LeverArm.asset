@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d5751a2c961df945a34295ccf5e576d, type: 3}
-  m_Name: Light
+  m_Name: LeverArm
   m_EditorClassIdentifier: 
   m_Cells:
-  - m_Tile: {fileID: 0}
+  - m_Tile: {fileID: 11400000, guid: ad3314a62e166804788ff6ff1c4d67ce, type: 2}
     m_Matrix:
       e00: 1
       e01: 0
@@ -36,6 +36,6 @@ MonoBehaviour:
   m_Pivot: {x: 0, y: 0, z: 0}
   m_CanChangeZPosition: 0
   m_Prefabs:
-  - {fileID: 1914682330119249570, guid: 27493b5209248da4b910130734b8ab17, type: 3}
-  m_PerlinScale: 0.5
+  - {fileID: 732595750367220382, guid: 5973750708c6d6848b1846ac108024cf, type: 3}
+  m_PerlinScale: 0.305
   m_Anchor: {x: 0.5, y: 0.5, z: 0.5}

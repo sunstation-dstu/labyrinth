@@ -106,8 +106,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (isOnGround)
-        {
             if (Input.GetAxis("Horizontal") != 0 && !Input.GetKey(KeyCode.LeftShift))
             {
                 isSameDirections = Input.GetAxis("Horizontal") > 0 == spriteRenderer.flipX;
@@ -119,6 +117,8 @@ public class Player : MonoBehaviour
                 Movement(MovementStatuses.Run, Input.GetAxisRaw("Horizontal"));
             } else Movement(MovementStatuses.Idle);
 
+        if (isOnGround)
+        {
             if (Input.GetKeyDown(KeyCode.W)) rigidBody.AddForce(new Vector2(0, jumpPower));
         }
     }
