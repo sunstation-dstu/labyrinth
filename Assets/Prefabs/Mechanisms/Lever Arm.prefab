@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 732595750367220369}
   - component: {fileID: 732595750367220368}
-  - component: {fileID: 732595750367220383}
   - component: {fileID: 732595750367220370}
   m_Layer: 0
   m_Name: Lever Arm
@@ -84,19 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &732595750367220383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732595750367220382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e61d9fe8f58abcb468f742d198f0e0b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isActive: 0
 --- !u!61 &732595750367220370
 BoxCollider2D:
   m_ObjectHideFlags: 0
