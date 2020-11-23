@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Класс Игрока
@@ -47,12 +47,6 @@ public class Player : MonoBehaviour
     const float groundCheckingRadius = 0.2f;
 
     /// <summary>
-    /// Совпадает ли фактическое направление движения (нажатие на клавиатуре) с
-    /// действительным (направление спрайта игрока)
-    /// </summary>
-    bool isSameDirections;
-
-    /// <summary>
     /// Перечисление состояний движения
     /// </summary>
     public enum MovementStatuses
@@ -76,7 +70,9 @@ public class Player : MonoBehaviour
                 break;
             case MovementStatuses.Run:
             case MovementStatuses.Walk:
-                if (isSameDirections)
+                /// Совпадает ли фактическое направление движения (нажатие на клавиатуре) с
+                /// действительным (направление спрайта игрока)
+                if (Input.GetAxis("Horizontal") > 0 == spriteRenderer.flipX)
                 {
                     spriteRenderer.flipX = !spriteRenderer.flipX;
                 }
@@ -108,15 +104,13 @@ public class Player : MonoBehaviour
     {
         if (isOnGround)
         {
-            if (Input.GetAxis("Horizontal") != 0 && !Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetAxisRaw("Horizontal") != 0 && !Input.GetKey(KeyCode.LeftShift))
             {
-                isSameDirections = Input.GetAxis("Horizontal") > 0 == spriteRenderer.flipX;
-                Movement(MovementStatuses.Walk, Input.GetAxisRaw("Horizontal"));
+                Movement(MovementStatuses.Walk, Input.GetAxis("Horizontal"));
             }
-            else if (Input.GetAxis("Horizontal") != 0 && Input.GetKey(KeyCode.LeftShift))
+            else if (Input.GetAxisRaw("Horizontal") != 0 && Input.GetKey(KeyCode.LeftShift))
             {
-                isSameDirections = Input.GetAxis("Horizontal") > 0 == spriteRenderer.flipX;
-                Movement(MovementStatuses.Run, Input.GetAxisRaw("Horizontal"));
+                Movement(MovementStatuses.Run, Input.GetAxis("Horizontal"));
             } else Movement(MovementStatuses.Idle);
 
             if (Input.GetKeyDown(KeyCode.W)) rigidBody.AddForce(new Vector2(0, jumpPower));
