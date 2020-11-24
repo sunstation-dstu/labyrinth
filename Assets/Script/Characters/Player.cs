@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Класс Игрока
@@ -47,12 +47,6 @@ public class Player : MonoBehaviour
     const float groundCheckingRadius = 0.2f;
 
     /// <summary>
-    /// Совпадает ли фактическое направление движения (нажатие на клавиатуре) с
-    /// действительным (направление спрайта игрока)
-    /// </summary>
-    bool isSameDirections;
-
-    /// <summary>
     /// Перечисление состояний движения
     /// </summary>
     public enum MovementStatuses
@@ -76,7 +70,9 @@ public class Player : MonoBehaviour
                 break;
             case MovementStatuses.Run:
             case MovementStatuses.Walk:
-                if (isSameDirections)
+                /// Совпадает ли фактическое направление движения (нажатие на клавиатуре) с
+                /// действительным (направление спрайта игрока)
+                if (Input.GetAxis("Horizontal") > 0 == spriteRenderer.flipX)
                 {
                     spriteRenderer.flipX = !spriteRenderer.flipX;
                 }
@@ -106,16 +102,14 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-            if (Input.GetAxis("Horizontal") != 0 && !Input.GetKey(KeyCode.LeftShift))
-            {
-                isSameDirections = Input.GetAxis("Horizontal") > 0 == spriteRenderer.flipX;
-                Movement(MovementStatuses.Walk, Input.GetAxisRaw("Horizontal"));
-            }
-            else if (Input.GetAxis("Horizontal") != 0 && Input.GetKey(KeyCode.LeftShift))
-            {
-                isSameDirections = Input.GetAxis("Horizontal") > 0 == spriteRenderer.flipX;
-                Movement(MovementStatuses.Run, Input.GetAxisRaw("Horizontal"));
-            } else Movement(MovementStatuses.Idle);
+        if (Input.GetAxis("Horizontal") != 0 && !Input.GetKey(KeyCode.LeftShift))
+        {
+            Movement(MovementStatuses.Walk, Input.GetAxis("Horizontal"));
+        }
+        else if (Input.GetAxisRaw("Horizontal") != 0 && Input.GetKey(KeyCode.LeftShift))
+        {
+            Movement(MovementStatuses.Run, Input.GetAxis("Horizontal"));
+        } else Movement(MovementStatuses.Idle);
 
         if (isOnGround)
         {
