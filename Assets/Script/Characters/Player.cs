@@ -102,17 +102,17 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetAxis("Horizontal") != 0 && !Input.GetKey(KeyCode.LeftShift))
+        {
+            Movement(MovementStatuses.Walk, Input.GetAxis("Horizontal"));
+        }
+        else if (Input.GetAxisRaw("Horizontal") != 0 && Input.GetKey(KeyCode.LeftShift))
+        {
+            Movement(MovementStatuses.Run, Input.GetAxis("Horizontal"));
+        } else Movement(MovementStatuses.Idle);
+
         if (isOnGround)
         {
-            if (Input.GetAxisRaw("Horizontal") != 0 && !Input.GetKey(KeyCode.LeftShift))
-            {
-                Movement(MovementStatuses.Walk, Input.GetAxis("Horizontal"));
-            }
-            else if (Input.GetAxisRaw("Horizontal") != 0 && Input.GetKey(KeyCode.LeftShift))
-            {
-                Movement(MovementStatuses.Run, Input.GetAxis("Horizontal"));
-            } else Movement(MovementStatuses.Idle);
-
             if (Input.GetKeyDown(KeyCode.W)) rigidBody.AddForce(new Vector2(0, jumpPower));
         }
     }

@@ -65,45 +65,48 @@ public class Inv : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Physics2D.queriesStartInColliders = false;
-            hit = Physics2D.Raycast(player.transform.position, Vector3.right * player.transform.localScale.x * isRight, distance);
-            if (hit.collider != null && hit.collider.gameObject.layer == 11)
+            RaycastHit2D[] allHit = Physics2D.RaycastAll(player.transform.position, Vector3.right * player.transform.localScale.x * isRight, distance);
+            for (int i = 0; i < allHit.Length; i++)
             {
-                  GameObject itItemObj = hit.collider.gameObject;
-                  item itItem = itItemObj.GetComponent<item>();
-                  bool isPickUp = false;
-                  if (gt1.iD == 0 && itemlist[itItem.id].type == items.typeMove.gun)
-                  {
-                      gt1.iD = itItem.id;
-                      isPickUp = true;
-                  }
-                  else if (gt2.iD == 0 && itemlist[itItem.id].type == items.typeMove.tool)
-                  {
-                    gt2.iD = itItem.id;
-                      isPickUp = true;
-                  }
-                  else if (itemlist[itItem.id].type == items.typeMove.other)
-                  {
-                      for (int i = 1; i <= ic.GetComponent<UI>().childCountOther; i++)
-                      {
-                        string number = i.ToString();
-                        GameObject findCell = othr.transform.Find(number).gameObject;
-                        int cellID = findCell.GetComponent<cellSettings>().iD;
-                        if (cellID == 0)
-                          {
-                              findCell.GetComponent<cellSettings>().iD = itItem.id;
-                              isPickUp = true;
-                              break;
-                          }
-                      }
-                  }
-                if (isPickUp == true)
-                    Destroy(itItemObj);
-                else print("Нет места");
+                if (allHit[i].collider.gameObject.layer == 11)
+                {
+                    GameObject itItemObj = allHit[i].collider.gameObject;
+                    item itItem = itItemObj.GetComponent<item>();
+                    bool isPickUp = false;
+                    if (gt1.iD == 0 && itemlist[itItem.id].type == items.typeMove.gun)
+                    {
+                        gt1.iD = itItem.id;
+                        isPickUp = true;
+                    }
+                    else if (gt2.iD == 0 && itemlist[itItem.id].type == items.typeMove.tool)
+                    {
+                        gt2.iD = itItem.id;
+                        isPickUp = true;
+                    }
+                    else if (itemlist[itItem.id].type == items.typeMove.other)
+                    {
+                        for (int j = 1; j <= ic.GetComponent<UI>().childCountOther; j++)
+                        {
+                            string number = j.ToString();
+                            GameObject findCell = othr.transform.Find(number).gameObject;
+                            int cellID = findCell.GetComponent<cellSettings>().iD;
+                            if (cellID == 0)
+                            {
+                                findCell.GetComponent<cellSettings>().iD = itItem.id;
+                                isPickUp = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (isPickUp == true)
+                        Destroy(itItemObj);
+                    else print("Нет места");
+                    break;
+                }
+                if (allHit[i].collider.gameObject.layer == 8) break;
             }
         }
     }
-
 
     private void OnDrawGizmos()
     {
