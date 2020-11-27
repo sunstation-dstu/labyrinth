@@ -10,7 +10,7 @@ public class connection : MonoBehaviour
         nothing = 0,
         leverArm = 1,
         mediator = 2,
-        light = 3
+        listener = 3
     }
     public checkState status;
     public bool isActive = false; //активация элемента в сети
@@ -70,9 +70,9 @@ public class connection : MonoBehaviour
                     buffer = 0;
                 }
                 break;
-            case checkState.light: //статус света. Включает свет, если поступившее значение isActive из connector истинно
-                if (connector.GetComponent<connection>().isActive) gameObject.transform.Find("Light").gameObject.SetActive(true);
-                else gameObject.transform.Find("Light").gameObject.SetActive(false);
+            case checkState.listener: //статус света. Включает свет, если поступившее значение isActive из connector истинно
+                if (connector.GetComponent<connection>().isActive) GetComponent<Animator>().SetBool("Active", true);
+                else GetComponent<Animator>().SetBool("Active", false);
                 break;
         }
     }
