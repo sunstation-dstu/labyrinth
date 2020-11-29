@@ -8,14 +8,12 @@ public class HPCount : MonoBehaviour
     [Range(0,100)]
     public int hp = 100;
     public Slider hpCount;
-    void Start()
-    {
-        
-    }
+    public AudioSource HeartBite;
 
-    // Update is called once per frame
     void Update()
     {
         hpCount.value = hp;
+
+        
     }
 }
