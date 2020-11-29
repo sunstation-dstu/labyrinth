@@ -123,6 +123,7 @@ public class Player : MonoBehaviour
             {
                 rigidBody.AddForce(new Vector2(0, jumpPower));
                 Jump.Play();
+                WalkSound.Stop();
             }
         }
     }

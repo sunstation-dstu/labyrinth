@@ -13,7 +13,13 @@ public class HPCount : MonoBehaviour
     void Update()
     {
         hpCount.value = hp;
-
-        
+        if (hp < 30)
+        {
+            HeartBite.Play();
+        }
+        else
+        {
+            HeartBite.Stop();
+        }
     }
 }
