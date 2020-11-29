@@ -46,6 +46,9 @@ public class Player : MonoBehaviour
     /// </summary>
     const float groundCheckingRadius = 0.2f;
 
+    public AudioSource Jump;
+    public AudioSource WalkSound;
+
     /// <summary>
     /// Перечисление состояний движения
     /// </summary>
@@ -67,6 +70,7 @@ public class Player : MonoBehaviour
         {
             case MovementStatuses.Idle: 
                 anim.SetBool("isRunning", false);
+                WalkSound.Stop();
                 break;
             case MovementStatuses.Run:
             case MovementStatuses.Walk:
@@ -75,6 +79,8 @@ public class Player : MonoBehaviour
                 if (Input.GetAxis("Horizontal") > 0 == spriteRenderer.flipX)
                 {
                     spriteRenderer.flipX = !spriteRenderer.flipX;
+                    WalkSound.loop = true;
+                    WalkSound.Play();
                 }
 
                 float movementSpeed = status.Equals(MovementStatuses.Walk) ? walkSpeed : runSpeed;
@@ -113,7 +119,11 @@ public class Player : MonoBehaviour
 
         if (isOnGround)
         {
-            if (Input.GetKeyDown(KeyCode.W)) rigidBody.AddForce(new Vector2(0, jumpPower));
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                rigidBody.AddForce(new Vector2(0, jumpPower));
+                Jump.Play();
+            }
         }
     }
 }
