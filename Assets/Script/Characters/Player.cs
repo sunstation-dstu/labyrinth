@@ -115,5 +115,19 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.W)) rigidBody.AddForce(new Vector2(0, jumpPower));
         }
+
+        // TODO Перенести это в ивент менеджер или сделать через паттерн "посредник"
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // FIXME
+            RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, GetComponent<BoxCollider2D>().bounds.size, 0, Vector2.zero);
+
+            foreach (RaycastHit2D hit in hits)
+            {
+                IInteractable component = hit.transform.GetComponent<IInteractable>();
+                if (component != null)
+                    component.Interact();
+            }
+        }
     }
 }
