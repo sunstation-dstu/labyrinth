@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HPCount : MonoBehaviour
 {
@@ -17,5 +18,9 @@ public class HPCount : MonoBehaviour
     void Update()
     {
         hpCount.value = hp;
+        if (hp == 0)
+        {
+            SceneManager.LoadScene(0);  
+        }
     }
 }
