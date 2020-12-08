@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5206431261541990628}
   - component: {fileID: 4597426054428264876}
   - component: {fileID: 7818659236217732355}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 18
-  m_Sprite: {fileID: 1023972913052672430, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: -1986971859860470961, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,8 +100,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 2433656754542773481}
   m_Bounds:
-    m_Center: {x: 0.00047002733, y: -0.00000047683716, z: 0}
-    m_Extent: {x: 0.22951987, y: 0.67499995, z: 0}
+    m_Center: {x: 8.634037, y: 8.975691, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &7818659236217732355
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 8.924916e+31
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &54702302778012639
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 3303839428898007801}
   - component: {fileID: 7115679486364900047}
   - component: {fileID: 1041859520727516757}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 29
-  m_Sprite: {fileID: 4890458077990704593, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: 2159221891607825611, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -218,8 +218,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8093600486210848393}
   m_Bounds:
-    m_Center: {x: 0.00006905198, y: 0.001975119, z: 0}
-    m_Extent: {x: 0.38993007, y: 0.29802486, z: 0}
+    m_Center: {x: 7.837834, y: 2.7906494, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &1041859520727516757
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: -1.4470151e-16
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &342331857503524992
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3900414456376822015}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left_hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4634958217608329032}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 3246082748887597405}
   - component: {fileID: 5149851008171476270}
   - component: {fileID: 691359878493516563}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 16
-  m_Sprite: {fileID: 6613901507222727463, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: -91677043815229311, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -404,8 +404,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 2433656754542773481}
   m_Bounds:
-    m_Center: {x: -0.0019401312, y: 0.041475415, z: 0}
-    m_Extent: {x: 0.3880298, y: 1.2185249, z: 0}
+    m_Center: {x: 0.3821077, y: -1.3989811, z: 0}
+    m_Extent: {x: 0.40081993, y: 1.3366446, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &691359878493516563
@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: -9.90669e-17
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &923721454541707694
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +431,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3612147812579900701}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left_arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -462,7 +462,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1611730955144814738}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993986287992145275}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -497,7 +497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6532107322306937797}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -512,7 +512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1059516383977820955}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.35284138, y: 5.936778, z: 0}
+  m_LocalPosition: {x: 0, y: 4.6024413, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3445043975870844709}
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 8143019131014389727}
   - component: {fileID: 9172723979038449223}
   - component: {fileID: 3692983054417620629}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 13
-  m_Sprite: {fileID: 4793594199505126162, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: -2763798953297152018, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -621,8 +621,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3445043975870844709}
   m_Bounds:
-    m_Center: {x: 0.0002645254, y: 0.0000009536743, z: 0}
-    m_Extent: {x: 1.196655, y: 1.575, z: 0}
+    m_Center: {x: 0.31284094, y: -1.0843358, z: 0}
+    m_Extent: {x: 1.16, y: 1.4749999, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &3692983054417620629
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 1.6059022e+36
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &1361728904621202221
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,7 +651,7 @@ GameObject:
   - component: {fileID: 3275924660281394094}
   - component: {fileID: 1215503737514252015}
   - component: {fileID: 757993766940750781}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,7 +712,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 34
-  m_Sprite: {fileID: 2491134463785126179, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: 378783380692218638, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -739,8 +739,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 4997804252649827929}
   m_Bounds:
-    m_Center: {x: -0.0022400916, y: 0, z: 0}
-    m_Extent: {x: 0.2965302, y: 0.8900001, z: 0}
+    m_Center: {x: 0.38907304, y: -1.2052917, z: 0}
+    m_Extent: {x: 0.2948897, y: 0.8391142, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &757993766940750781
@@ -756,7 +756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 2.1846493e-20
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &1895620448864177100
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,7 +766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2433656754542773481}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left_thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -797,7 +797,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3445043975870844709}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -830,7 +830,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2994150883284832641}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right_foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -860,7 +860,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8053828715087288756}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -894,7 +894,7 @@ GameObject:
   - component: {fileID: 7636510879878793337}
   - component: {fileID: 5710888009524256381}
   - component: {fileID: 5224869458630697784}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -955,7 +955,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 4050328007678718852, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: -6780010629413658220, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -982,8 +982,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 4912833313755609866}
   m_Bounds:
-    m_Center: {x: 0.0008200407, y: 0.0018293858, z: 0}
-    m_Extent: {x: 0.23418006, y: 0.6881702, z: 0}
+    m_Center: {x: 7.562432, y: 8.804422, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &5224869458630697784
@@ -999,7 +999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 2.364694e-25
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &3447473360393466133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,7 +1012,7 @@ GameObject:
   - component: {fileID: 6847302517345341333}
   - component: {fileID: 2504004776672151429}
   - component: {fileID: 6078901587292432064}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right pupil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1073,7 +1073,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 24
-  m_Sprite: {fileID: 8491551423853285484, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: 5742677674164172030, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1100,8 +1100,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8093600486210848393}
   m_Bounds:
-    m_Center: {x: -0.0000023841858, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Center: {x: -6.9771643, y: -5.5823007, z: 0}
+    m_Extent: {x: 0.05499983, y: 0.062950134, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &6078901587292432064
@@ -1117,7 +1117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 434.9488
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &3975630868902261607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,7 +1130,7 @@ GameObject:
   - component: {fileID: 355472246159588177}
   - component: {fileID: 7710787992344839449}
   - component: {fileID: 5818487908848127540}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right shin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1191,7 +1191,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 9
-  m_Sprite: {fileID: -5445367525903115786, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: 6635056302442592459, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1218,8 +1218,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 1985488602147554221}
   m_Bounds:
-    m_Center: {x: 0.0015646517, y: -0.13849378, z: 0}
-    m_Extent: {x: 0.37800503, y: 1.4979451, z: 0}
+    m_Center: {x: 0.26931408, y: -1.7459326, z: 0}
+    m_Extent: {x: 0.32416385, y: 1.371006, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &5818487908848127540
@@ -1235,7 +1235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: -0.026097931
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &4180266168940650019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,7 +1248,7 @@ GameObject:
   - component: {fileID: 4620297591184250334}
   - component: {fileID: 9031481336150621881}
   - component: {fileID: 5915895123425819528}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right elbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1309,7 +1309,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -222570355468561481, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: 6744419759409000524, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1336,8 +1336,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 1954937016445307205}
   m_Bounds:
-    m_Center: {x: -0.00127545, y: 0.002269894, z: 0}
-    m_Extent: {x: 0.14783509, y: 0.41273007, z: 0}
+    m_Center: {x: 7.470421, y: 5.8709903, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &5915895123425819528
@@ -1353,7 +1353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 1.0033006e-35
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &4233394361178444245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,7 +1363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5655200651176333635}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1378,7 +1378,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4233394361178444245}
   m_LocalRotation: {x: 0, y: 0, z: -0.0022211731, w: 0.9999976}
-  m_LocalPosition: {x: 0.6373816, y: 0.00000029533214, z: 0}
+  m_LocalPosition: {x: 0.6074511, y: 0.005512906, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_Children:
   - {fileID: 8093600486210848393}
@@ -1394,7 +1394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4912833313755609866}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right_thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1428,7 +1428,7 @@ GameObject:
   - component: {fileID: 4844060116928955284}
   - component: {fileID: 5437352179750473843}
   - component: {fileID: 4746990837587793486}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1489,7 +1489,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -7420332205566414669, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: -8845871919068674292, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1516,8 +1516,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 1954937016445307205}
   m_Bounds:
-    m_Center: {x: 0.0021846294, y: 0.00093501806, z: 0}
-    m_Extent: {x: 0.5128149, y: 0.51406497, z: 0}
+    m_Center: {x: 7.235421, y: 4.3909903, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &4746990837587793486
@@ -1533,7 +1533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: -6.05919e-20
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &4615433977453822691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,7 +1543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8747360955631500957}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1557,7 +1557,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4615433977453822691}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1581,7 +1581,7 @@ GameObject:
   - component: {fileID: 3006946653813450395}
   - component: {fileID: 3517496022055362038}
   - component: {fileID: 6759908676216966719}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1642,7 +1642,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: -247581042620728803, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: -665803732943783935, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1669,8 +1669,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 5557337290812081521}
   m_Bounds:
-    m_Center: {x: -0.00000035762787, y: 0.053901017, z: 0}
-    m_Extent: {x: 0.59000003, y: 0.37327003, z: 0}
+    m_Center: {x: 0.28798646, y: -1.2794874, z: 0}
+    m_Extent: {x: 0.60367346, y: 0.3634987, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &6759908676216966719
@@ -1686,7 +1686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 8.133204e-25
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &4637284195144868328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,7 +1699,7 @@ GameObject:
   - component: {fileID: 8543305333014772944}
   - component: {fileID: 323730378505148452}
   - component: {fileID: 4135162881079146825}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1760,7 +1760,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 3476599161473747135, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: -1469090505793111544, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1787,8 +1787,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 544191566866767374}
   m_Bounds:
-    m_Center: {x: -0.0015507042, y: -0.002189517, z: 0}
-    m_Extent: {x: 0.37683994, y: 0.8583899, z: 0}
+    m_Center: {x: 0.48428735, y: -1.24035, z: 0}
+    m_Extent: {x: 0.3723302, y: 0.8582662, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &4135162881079146825
@@ -1804,7 +1804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: -4558.356
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &4815540320659207747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,7 +1814,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1985488602147554221}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right_shin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1848,7 +1848,7 @@ GameObject:
   - component: {fileID: 5111502728914257946}
   - component: {fileID: 5035569121855204454}
   - component: {fileID: 3987100354425497534}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1909,7 +1909,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -2593966767726239683, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: 1297254339750994852, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1936,8 +1936,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 1954937016445307205}
   m_Bounds:
-    m_Center: {x: -0.00019097328, y: 0.110080004, z: 0}
-    m_Extent: {x: 0.24941993, y: 0.87991995, z: 0}
+    m_Center: {x: 0.37293595, y: -1.0651522, z: 0}
+    m_Extent: {x: 0.24730334, y: 0.90098834, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &3987100354425497534
@@ -1953,7 +1953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 1.943404e-26
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &5111304005570907436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,7 +1966,7 @@ GameObject:
   - component: {fileID: 6357098668748439169}
   - component: {fileID: 6842761258608072392}
   - component: {fileID: 2632517241668294798}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2027,7 +2027,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 608848941772750939, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: -374877058723036262, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2054,8 +2054,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 2994150883284832641}
   m_Bounds:
-    m_Center: {x: 0.00000023841858, y: 0.053336263, z: 0}
-    m_Extent: {x: 0.59, y: 0.37269494, z: 0}
+    m_Center: {x: 0.24865216, y: -1.2408705, z: 0}
+    m_Extent: {x: 0.59003854, y: 0.3682915, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &2632517241668294798
@@ -2071,7 +2071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 2.9047273e+32
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &5249363094333469301
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,7 +2084,7 @@ GameObject:
   - component: {fileID: 6067457783706803831}
   - component: {fileID: 8084522436550426687}
   - component: {fileID: 6394550178141514570}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2145,7 +2145,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 22
-  m_Sprite: {fileID: -9186520248800226429, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: -4358900312751680905, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2172,8 +2172,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8093600486210848393}
   m_Bounds:
-    m_Center: {x: -0.0000023841858, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Center: {x: -7.267164, y: -5.6243505, z: 0}
+    m_Extent: {x: 0.5050001, y: 0.13499999, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &6394550178141514570
@@ -2189,7 +2189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 1.2684659e-34
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &5727086968483565669
 GameObject:
   m_ObjectHideFlags: 0
@@ -2202,7 +2202,7 @@ GameObject:
   - component: {fileID: 5821973108548582615}
   - component: {fileID: 7334919649560849067}
   - component: {fileID: 8236944649877422512}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left elbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2263,7 +2263,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 35
-  m_Sprite: {fileID: 6707739542609715612, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: -3315874676028341786, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2290,8 +2290,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3612147812579900701}
   m_Bounds:
-    m_Center: {x: 0.000000044703484, y: 0.0011801124, z: 0}
-    m_Extent: {x: 0.15500002, y: 0.40314004, z: 0}
+    m_Center: {x: 9.590331, y: 5.853367, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &8236944649877422512
@@ -2307,7 +2307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 1.017082
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &6155925814105777655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,9 +2319,13 @@ GameObject:
   - component: {fileID: 1436842164540129556}
   - component: {fileID: 6758786709030551203}
   - component: {fileID: 5254549443154612616}
-  m_Layer: 0
+  - component: {fileID: 3238378865367877366}
+  - component: {fileID: -4367569132634558056}
+  - component: {fileID: -1513462696954821347}
+  - component: {fileID: -5056833173788720968}
+  m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2347,6 +2351,7 @@ Transform:
   - {fileID: 7500499446998586322}
   - {fileID: 2111642549264927778}
   - {fileID: 6723058432378219300}
+  - {fileID: 2038486609538809659}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2382,6 +2387,87 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SpriteLibraryAsset: {fileID: -8330889114801016250, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+--- !u!50 &3238378865367877366
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6155925814105777655}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &-4367569132634558056
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6155925814105777655}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.020689607, y: 5.32195}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.034498, y: 10.5090885}
+  m_EdgeRadius: 0
+--- !u!114 &-1513462696954821347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6155925814105777655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e934ca71bca674fa4d14966107f6bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 10
+  runSpeed: 20
+  jumpPower: 6000
+  isOnGround: 0
+  groundCheckPoint: {fileID: 2038486609538809659}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &-5056833173788720968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6155925814105777655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35271cb46f4a9c2478acf572ef767ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  hpCount: {fileID: 0}
 --- !u!1 &6204260901347147189
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,7 +2480,7 @@ GameObject:
   - component: {fileID: 5382873049711843374}
   - component: {fileID: 5804196038099653409}
   - component: {fileID: 4865237374536844234}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Glasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2455,7 +2541,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 28
-  m_Sprite: {fileID: -4125576369448079077, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: 4594909245443457241, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2482,8 +2568,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8093600486210848393}
   m_Bounds:
-    m_Center: {x: -0.0000023841858, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Center: {x: -7.317214, y: -5.6643505, z: 0}
+    m_Extent: {x: 0.7049496, y: 0.19500017, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &4865237374536844234
@@ -2499,7 +2585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 0.0001520041
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &6472885288230028175
 GameObject:
   m_ObjectHideFlags: 0
@@ -2512,7 +2598,7 @@ GameObject:
   - component: {fileID: 5330508760134772802}
   - component: {fileID: 7693739597836933911}
   - component: {fileID: 984879457184787845}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right brow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2573,7 +2659,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 26
-  m_Sprite: {fileID: 2950108937037181011, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: 5051415656842637540, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2600,8 +2686,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8093600486210848393}
   m_Bounds:
-    m_Center: {x: -0.0000023841858, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Center: {x: -6.924014, y: -5.47435, z: 0}
+    m_Extent: {x: 0.15814996, y: 0.05499983, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &984879457184787845
@@ -2617,7 +2703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 9.768881e+33
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &6477386556120926896
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,7 +2716,7 @@ GameObject:
   - component: {fileID: 8235253618734991262}
   - component: {fileID: 1627686086751333532}
   - component: {fileID: 6110467143113086284}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left shin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2691,7 +2777,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 17
-  m_Sprite: {fileID: 1784269877031284823, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: 9152228660127089682, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2718,8 +2804,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 7334120483212549521}
   m_Bounds:
-    m_Center: {x: -0.0000005662441, y: -0.120879054, z: 0}
-    m_Extent: {x: 0.39500004, y: 1.4911902, z: 0}
+    m_Center: {x: 0.2765162, y: -1.8139471, z: 0}
+    m_Extent: {x: 0.4176197, y: 1.3545719, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &6110467143113086284
@@ -2735,7 +2821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: -7.3265413e+18
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &6546721559784676582
 GameObject:
   m_ObjectHideFlags: 0
@@ -2748,7 +2834,7 @@ GameObject:
   - component: {fileID: 2739227630404111521}
   - component: {fileID: 5921997622677022857}
   - component: {fileID: 1915985244041676918}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2809,7 +2895,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 32
-  m_Sprite: {fileID: -648224443268486253, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: 1764117081049029796, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2836,8 +2922,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3900414456376822015}
   m_Bounds:
-    m_Center: {x: -0.0000795722, y: -0.0014695823, z: 0}
-    m_Extent: {x: 0.3095, y: 0.47853, z: 0}
+    m_Center: {x: 0.35318676, y: -1.295038, z: 0}
+    m_Extent: {x: 0.26965517, y: 0.39989012, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &1915985244041676918
@@ -2853,7 +2939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: -9.788034e+34
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &6573355693869498137
 GameObject:
   m_ObjectHideFlags: 0
@@ -2863,7 +2949,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2111642549264927778}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2877,7 +2963,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6573355693869498137}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2900,7 +2986,7 @@ GameObject:
   - component: {fileID: 3381077612499301545}
   - component: {fileID: 6521551273572916224}
   - component: {fileID: 1491702020116384862}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2960,8 +3046,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 20
-  m_Sprite: {fileID: -4986451994571476418, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_SortingOrder: 12
+  m_Sprite: {fileID: -8320332071171294930, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2988,8 +3074,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8053828715087288756}
   m_Bounds:
-    m_Center: {x: 0.00048962235, y: 0.005280018, z: 0}
-    m_Extent: {x: 0.43641996, y: 0.5874001, z: 0}
+    m_Center: {x: 0.3678412, y: -1.1534702, z: 0}
+    m_Extent: {x: 0.26500005, y: 0.38413513, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &1491702020116384862
@@ -3005,7 +3091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: -3.257802e-39
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &6644416327026931928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3015,7 +3101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1954937016445307205}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right_arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3049,7 +3135,7 @@ GameObject:
   - component: {fileID: 3951028689030403706}
   - component: {fileID: 5880052840851809035}
   - component: {fileID: 9182637412712484026}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3110,7 +3196,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 4437827520516887334, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: 7474050794488530851, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3137,8 +3223,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 6545629372062478074}
   m_Bounds:
-    m_Center: {x: 0.00047951937, y: -0.0014794767, z: 0}
-    m_Extent: {x: 0.2957102, y: 0.46352008, z: 0}
+    m_Center: {x: 0.38720906, y: -1.2943354, z: 0}
+    m_Extent: {x: 0.2631501, y: 0.3950001, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &9182637412712484026
@@ -3154,7 +3240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: -2.25611e-22
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &7173328803927244354
 GameObject:
   m_ObjectHideFlags: 0
@@ -3167,7 +3253,7 @@ GameObject:
   - component: {fileID: 6416148481512155120}
   - component: {fileID: 8700302149343880664}
   - component: {fileID: 6895340313616416691}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3228,7 +3314,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: -7156497163440817331, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: -8233054706326166838, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3255,8 +3341,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 4912833313755609866}
   m_Bounds:
-    m_Center: {x: -0.00000035762787, y: 0.048194766, z: 0}
-    m_Extent: {x: 0.41500026, y: 1.4347548, z: 0}
+    m_Center: {x: 0.2961538, y: -1.5157633, z: 0}
+    m_Extent: {x: 0.39191112, y: 1.3568053, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &6895340313616416691
@@ -3272,7 +3358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: -9.483128e-21
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &7312981290365618900
 GameObject:
   m_ObjectHideFlags: 0
@@ -3282,7 +3368,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7334120483212549521}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left_shin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3313,7 +3399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4997804252649827929}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left_forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3347,7 +3433,7 @@ GameObject:
   - component: {fileID: 4117119555429933042}
   - component: {fileID: 1555178620023325594}
   - component: {fileID: 2003568337330976754}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3408,7 +3494,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 21
-  m_Sprite: {fileID: -3198602390210357851, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: -3446749664630340983, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3435,8 +3521,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 5655200651176333635}
   m_Bounds:
-    m_Center: {x: -0.0024650693, y: -0.004714012, z: 0}
-    m_Extent: {x: 0.9087252, y: 1.1113349, z: 0}
+    m_Center: {x: 0.34783655, y: -1.4192643, z: 0}
+    m_Extent: {x: 0.8150001, y: 1.0232801, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &2003568337330976754
@@ -3452,7 +3538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 2.9092094e-34
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &7385010934491780737
 GameObject:
   m_ObjectHideFlags: 0
@@ -3465,7 +3551,7 @@ GameObject:
   - component: {fileID: 5791217625648304673}
   - component: {fileID: 3560681634437773474}
   - component: {fileID: 5236802537126099581}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3526,7 +3612,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 12
-  m_Sprite: {fileID: -8740113722594480031, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: 1952863907378570741, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3553,8 +3639,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 6532107322306937797}
   m_Bounds:
-    m_Center: {x: -0.0005553961, y: 0, z: 0}
-    m_Extent: {x: 0.7193352, y: 0.7350002, z: 0}
+    m_Center: {x: 0.39277107, y: -1.3395463, z: 0}
+    m_Extent: {x: 0.7498302, y: 0.73914015, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &5236802537126099581
@@ -3570,7 +3656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: -5.893148e-10
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &7393694290591593457
 GameObject:
   m_ObjectHideFlags: 0
@@ -3583,7 +3669,7 @@ GameObject:
   - component: {fileID: 302876730746909852}
   - component: {fileID: 3744752988984555119}
   - component: {fileID: 6383332446992261692}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3644,7 +3730,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 27
-  m_Sprite: {fileID: -3990621806065022375, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: -7229755298589047748, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3671,8 +3757,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 5655200651176333635}
   m_Bounds:
-    m_Center: {x: 0.0000014305115, y: 0.0000009536743, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Center: {x: -7.180309, y: -6.209424, z: 0}
+    m_Extent: {x: 0.15814495, y: 0.04493022, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &6383332446992261692
@@ -3688,7 +3774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 9.544134e+18
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &7452331519399691082
 GameObject:
   m_ObjectHideFlags: 0
@@ -3701,7 +3787,7 @@ GameObject:
   - component: {fileID: 2067875921852285223}
   - component: {fileID: 8387799090261210548}
   - component: {fileID: 7264627517041637507}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3762,7 +3848,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 36
-  m_Sprite: {fileID: 4972239236050600961, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: -5295435776697274441, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3789,8 +3875,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3612147812579900701}
   m_Bounds:
-    m_Center: {x: -0.0027803779, y: 0.0017748773, z: 0}
-    m_Extent: {x: 0.5822201, y: 0.45822507, z: 0}
+    m_Center: {x: 9.240332, y: 4.438367, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &7264627517041637507
@@ -3806,7 +3892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: -5.991369e-25
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &7534604355027066630
 GameObject:
   m_ObjectHideFlags: 0
@@ -3819,7 +3905,7 @@ GameObject:
   - component: {fileID: 823905235228927269}
   - component: {fileID: 287001011944436506}
   - component: {fileID: 2835097293862593135}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left brow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3880,7 +3966,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 25
-  m_Sprite: {fileID: -6052224155423634968, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: 6100067466487986202, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3907,8 +3993,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8093600486210848393}
   m_Bounds:
-    m_Center: {x: -0.0000023841858, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Center: {x: -7.5144243, y: -5.449355, z: 0}
+    m_Extent: {x: 0.2377398, y: 0.049995184, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &2835097293862593135
@@ -3924,7 +4010,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 9.623343e-26
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
+--- !u!1 &7643161098602966856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2038486609538809659}
+  m_Layer: 9
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2038486609538809659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643161098602966856}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.65332997, y: 0.65332997, z: 0.65332997}
+  m_Children: []
+  m_Father: {fileID: 1436842164540129556}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7655631602158770164
 GameObject:
   m_ObjectHideFlags: 0
@@ -3937,7 +4053,7 @@ GameObject:
   - component: {fileID: 5314056892938681428}
   - component: {fileID: 5613857403861904404}
   - component: {fileID: 2221797320913202576}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3998,7 +4114,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 33
-  m_Sprite: {fileID: 6717911979158549276, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: 3771049059116584853, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4025,8 +4141,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3612147812579900701}
   m_Bounds:
-    m_Center: {x: 0.029275179, y: 0.050000012, z: 0}
-    m_Extent: {x: 0.32647485, y: 0.9300003, z: 0}
+    m_Center: {x: 0.40863618, y: -1.0724856, z: 0}
+    m_Extent: {x: 0.33010662, y: 0.8891103, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &2221797320913202576
@@ -4042,7 +4158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: -2.2516569e+14
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &7976861583311870144
 GameObject:
   m_ObjectHideFlags: 0
@@ -4052,7 +4168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8093600486210848393}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4067,7 +4183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7976861583311870144}
   m_LocalRotation: {x: 0, y: 0, z: -0.7089242, w: 0.7052847}
-  m_LocalPosition: {x: 0.367415, y: -0.11250002, z: 0}
+  m_LocalPosition: {x: 0.3524205, y: -0.11231237, z: 0}
   m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
   m_Children: []
   m_Father: {fileID: 5655200651176333635}
@@ -4085,7 +4201,7 @@ GameObject:
   - component: {fileID: 4238007840562775901}
   - component: {fileID: 7976402669652906511}
   - component: {fileID: 7525213042735925111}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left pupil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4146,7 +4262,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 23
-  m_Sprite: {fileID: -8672794215031163855, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: 1420552306844464983, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4173,8 +4289,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8093600486210848393}
   m_Bounds:
-    m_Center: {x: -0.0000023841858, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Center: {x: -7.492164, y: -5.5743504, z: 0}
+    m_Extent: {x: 0.07000017, y: 0.06500006, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &7525213042735925111
@@ -4190,7 +4306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 4.615031e+34
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &8059702483078609404
 GameObject:
   m_ObjectHideFlags: 0
@@ -4200,7 +4316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 544191566866767374}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right_forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4231,7 +4347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6723058432378219300}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4245,7 +4361,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8071767747141801793}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4268,7 +4384,7 @@ GameObject:
   - component: {fileID: 3969907908669898672}
   - component: {fileID: 4069230260736099653}
   - component: {fileID: 4631429227627096248}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pelvis 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4329,7 +4445,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 14
-  m_Sprite: {fileID: 9022525418002560601, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
+  m_Sprite: {fileID: -7936174551439221663, guid: 049ae67b2dece004fa674a711bd4e5e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4356,8 +4472,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 6532107322306937797}
   m_Bounds:
-    m_Center: {x: -0.00032532215, y: 0.0007849932, z: 0}
-    m_Extent: {x: 0.756505, y: 0.8236552, z: 0}
+    m_Center: {x: 8.222843, y: 7.0106645, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &4631429227627096248
@@ -4373,7 +4489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: -2.5983661e-11
-  m_labelHash: -1.1379709e+32
+  m_labelHash: 2.279398e-16
 --- !u!1 &8988153705554458331
 GameObject:
   m_ObjectHideFlags: 0
@@ -4383,7 +4499,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7987219519992095929}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4397,7 +4513,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8988153705554458331}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4415,7 +4531,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6545629372062478074}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right_hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4445,7 +4561,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5557337290812081521}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left_foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

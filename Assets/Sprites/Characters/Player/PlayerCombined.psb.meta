@@ -18500,190 +18500,190 @@ ScriptedImporter:
     categories:
     - name: Pelvis
       labels:
-      - name: Costume
-        spriteId: 9c6dad03aaf254e4fa49154b32957113
       - name: Usual
         spriteId: c1210458cabcbcc47a795316ebfd00d5
+      - name: Costume
+        spriteId: 9c6dad03aaf254e4fa49154b32957113
     - name: Body
       labels:
-      - name: Costume
-        spriteId: 84dd48a962c8c6a47adbee7f431fe680
       - name: Usual
         spriteId: 8a86f5001f4bc4a40af9fa4596fbfd99
+      - name: Costume
+        spriteId: 84dd48a962c8c6a47adbee7f431fe680
     - name: Pelvis 2
       labels:
-      - name: Costume
-        spriteId: eec00201419659d42ae6203dff18fa32
       - name: Usual
         spriteId: 37084bfbcd6d1a747ab7c8e69de2adc2
+      - name: Costume
+        spriteId: eec00201419659d42ae6203dff18fa32
     - name: Neck
       labels:
-      - name: Costume
-        spriteId: c0b4474b140572141b1a1ce6eaaaa828
       - name: Usual
         spriteId: dcda0dc7e4bf7cf408151d602a0d9bca
+      - name: Costume
+        spriteId: c0b4474b140572141b1a1ce6eaaaa828
     - name: Left hand
       labels:
-      - name: Costume
-        spriteId: 107f704c2d4badd4190682e50a61e23a
       - name: Usual
         spriteId: 8e050639456d779478f0fcf8c17fb781
+      - name: Costume
+        spriteId: 107f704c2d4badd4190682e50a61e23a
     - name: Left arm
       labels:
-      - name: Costume
-        spriteId: c2c3edcafbf7cee4b8e9324a0cab1be4
       - name: Usual
         spriteId: 78aa09bd2e9a5cf4abc8b42587d450c4
+      - name: Costume
+        spriteId: c2c3edcafbf7cee4b8e9324a0cab1be4
     - name: Left forearm
       labels:
-      - name: Costume
-        spriteId: f64395b555b11f741ac76a4761f95079
       - name: Usual
         spriteId: b202e97880c69d341bdbdf8d12cc395c
+      - name: Costume
+        spriteId: f64395b555b11f741ac76a4761f95079
     - name: Left elbow
       labels:
-      - name: Costume
-        spriteId: b0fb48a1c85df9646b882a157386610b
       - name: Usual
         spriteId: 025ec35cdc3fd86479285b506feac69d
+      - name: Costume
+        spriteId: b0fb48a1c85df9646b882a157386610b
     - name: Left shoulder
       labels:
-      - name: Costume
-        spriteId: f8f18bdd5d469df41af3e68d628d05ba
       - name: Usual
         spriteId: c4f1ed4d9da74c441ab306078ffbde43
+      - name: Costume
+        spriteId: f8f18bdd5d469df41af3e68d628d05ba
     - name: Head
       labels:
-      - name: Costume
-        spriteId: 9e3760fbd3c87eb47a33a9a8ac8f320f
       - name: Usual
         spriteId: ab6cbaabe5249df4cb9e68742e294f60
+      - name: Costume
+        spriteId: 9e3760fbd3c87eb47a33a9a8ac8f320f
     - name: Eyes
       labels:
-      - name: Costume
-        spriteId: dfe8b60c708bede468e05ee3fd2f0167
       - name: Usual
         spriteId: e6c695f6fa920854f87f7886848e4213
+      - name: Costume
+        spriteId: dfe8b60c708bede468e05ee3fd2f0167
     - name: Left pupil
       labels:
-      - name: Costume
-        spriteId: 2bcdf4fd36527ab4f97aec4218498383
       - name: Usual
         spriteId: 5f76cd8d3d7a6ae4b96e2058512d9953
+      - name: Costume
+        spriteId: 2bcdf4fd36527ab4f97aec4218498383
     - name: Right pupil
       labels:
-      - name: Costume
-        spriteId: 4a682c9893fac9b49b7ee4c7e2a40c6b
       - name: Usual
         spriteId: 6006f57cde406794faf3ac2066b89a3e
+      - name: Costume
+        spriteId: 4a682c9893fac9b49b7ee4c7e2a40c6b
     - name: Left brow
       labels:
-      - name: Costume
-        spriteId: c625279da43650646a8495926167a686
       - name: Usual
         spriteId: 5f356aa7b4c9e654f8c3dc4844d33b20
+      - name: Costume
+        spriteId: c625279da43650646a8495926167a686
     - name: Right brow
       labels:
-      - name: Costume
-        spriteId: 6849234a37e052e418390e96b46dd173
       - name: Usual
         spriteId: 22de69369721b2f488eb099c34444219
+      - name: Costume
+        spriteId: 6849234a37e052e418390e96b46dd173
     - name: Mouth
       labels:
-      - name: Costume
-        spriteId: 8e38a403d98cde34781efd092e93ceb5
       - name: Usual
         spriteId: 0270f415d7392764f838421fc9f70d68
+      - name: Costume
+        spriteId: 8e38a403d98cde34781efd092e93ceb5
     - name: Glasses
       labels:
-      - name: Costume
-        spriteId: f9f92995ea3ed5a44bf26b01a8df2e38
       - name: Usual
         spriteId: f0d14ca801bb49d46a7efa2ad43d2639
+      - name: Costume
+        spriteId: f9f92995ea3ed5a44bf26b01a8df2e38
     - name: Face
       labels:
-      - name: Costume
-        spriteId: 56fbf5136ce0a0649af7c5498fb3bd78
       - name: Usual
         spriteId: 8b00cef5b4205694fa8b08e6da52df64
+      - name: Costume
+        spriteId: 56fbf5136ce0a0649af7c5498fb3bd78
     - name: Left foot
       labels:
-      - name: Costume
-        spriteId: 6ba328b3e8efc744181df5d9d65730e0
       - name: Usual
         spriteId: 4f6b3452eb6e0c34f822f3188f008eec
+      - name: Costume
+        spriteId: 6ba328b3e8efc744181df5d9d65730e0
     - name: Left thigh
       labels:
-      - name: Costume
-        spriteId: 3d4ace32d58569a4a8ff6147b0bdebb2
       - name: Usual
         spriteId: 2387e38ede13bee4f89aa7f017733533
+      - name: Costume
+        spriteId: 3d4ace32d58569a4a8ff6147b0bdebb2
     - name: Left shin
       labels:
-      - name: Costume
-        spriteId: 2ab7962061767204b8fa2346042ec719
       - name: Usual
         spriteId: 32a04ef84c442e84882470b6f41ea31f
+      - name: Costume
+        spriteId: 2ab7962061767204b8fa2346042ec719
     - name: Left knee
       labels:
-      - name: Costume
-        spriteId: 1641434454672384e9b9da5408ae273f
       - name: Usual
         spriteId: 62e12504d29edc446bd4ab54541fa022
+      - name: Costume
+        spriteId: 1641434454672384e9b9da5408ae273f
     - name: Right foot
       labels:
-      - name: Costume
-        spriteId: f59c688eca6b8944e9c99932d0dd1d6a
       - name: Usual
         spriteId: daeb5a9f4afd7854ba6e874668ad6dba
+      - name: Costume
+        spriteId: f59c688eca6b8944e9c99932d0dd1d6a
     - name: Right thigh
       labels:
-      - name: Costume
-        spriteId: 3829c2548bad76240baceac4ab364a29
       - name: Usual
         spriteId: 355ad35e362a81f44bf06b83ee6f16db
+      - name: Costume
+        spriteId: 3829c2548bad76240baceac4ab364a29
     - name: Right shin
       labels:
-      - name: Costume
-        spriteId: c7a46996dd62e3a40bb83972de651856
       - name: Usual
         spriteId: f1a88ea1eacb0864b991bb4538038174
+      - name: Costume
+        spriteId: c7a46996dd62e3a40bb83972de651856
     - name: Right knee
       labels:
-      - name: Costume
-        spriteId: 7284ccad198076b4ebcf04bff75a3ae7
       - name: Usual
         spriteId: bb86e635f5dd41f43adb269ca69401be
+      - name: Costume
+        spriteId: 7284ccad198076b4ebcf04bff75a3ae7
     - name: Right hand
       labels:
-      - name: Costume
-        spriteId: 2d620f3b50feaf949b2b2a92be4eefc0
       - name: Usual
         spriteId: 205c2643af5e44943b99d88a2a9c4f0e
+      - name: Costume
+        spriteId: 2d620f3b50feaf949b2b2a92be4eefc0
     - name: Right arm
       labels:
-      - name: Costume
-        spriteId: af1cf6433ffaa5f48b9cf377c421747c
       - name: Usual
         spriteId: dbbb38488a8f382409932bb8a8b55ce1
+      - name: Costume
+        spriteId: af1cf6433ffaa5f48b9cf377c421747c
     - name: Right forearm
       labels:
-      - name: Costume
-        spriteId: 5c5e5b3206b06df40b90dfc6e49ff66c
       - name: Usual
         spriteId: f32138e719f37bb40bbeed46478f7890
+      - name: Costume
+        spriteId: 5c5e5b3206b06df40b90dfc6e49ff66c
     - name: Right elbow
       labels:
-      - name: Costume
-        spriteId: 323600e1426c0624a9b45998d4a87526
       - name: Usual
         spriteId: 5833434b94658694f9cdf2a37b60f87f
+      - name: Costume
+        spriteId: 323600e1426c0624a9b45998d4a87526
     - name: Right shoulder
       labels:
-      - name: Costume
-        spriteId: d7ce0339777f94a49a2a112cd7d22b53
       - name: Usual
         spriteId: 93e69aae19036e145be2219ea8cbf9bd
+      - name: Costume
+        spriteId: d7ce0339777f94a49a2a112cd7d22b53
   textureActualWidth: 1024
   textureActualHeight: 1024
   spritePackingTag: 

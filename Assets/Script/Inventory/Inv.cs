@@ -111,6 +111,7 @@ public class Inv : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
+        // TODO null catch
         Gizmos.DrawLine(player.transform.position, player.transform.position + Vector3.right * isRight * distance);
     }
 

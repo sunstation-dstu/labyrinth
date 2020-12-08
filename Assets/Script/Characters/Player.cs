@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 /// <summary>
 /// Класс Игрока
@@ -11,11 +12,8 @@ public class Player : MonoBehaviour
     /// <summary>
     /// TODO
     /// </summary>
-    Rigidbody2D rigidBody;
-
+    private Rigidbody2D rigidBody;
     private Animator anim;
-
-    SpriteRenderer spriteRenderer;
 
     /// <summary>
     /// Скорость игрока при ходьбе
@@ -32,7 +30,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// Находиться ли игрок на земле
     /// </summary>
-    public bool isOnGround = false;
+    public bool isOnGround;
     /// <summary>
     /// Точка для проверки нахождения игрока на земле
     /// </summary>
@@ -41,15 +39,18 @@ public class Player : MonoBehaviour
     /// Слой, который является "землёй"
     /// </summary>
     public LayerMask groundLayer;
+
+    private static readonly int IsRunning = Animator.StringToHash("isRunning");
+
     /// <summary>
     /// Радиус проверки нахождения игрока на земле
     /// </summary>
-    const float groundCheckingRadius = 0.2f;
+    private const float GroundCheckingRadius = 0.2f;
 
     /// <summary>
     /// Перечисление состояний движения
     /// </summary>
-    public enum MovementStatuses
+    private enum MovementStatuses
     {
         Jump = -1,
         Idle = 0,
@@ -61,26 +62,29 @@ public class Player : MonoBehaviour
     /// Предвижение игрока
     /// </summary>
     /// <param name="status">Текущий статус передвижения</param>
+    /// <param name="speedMultiplier">Множитель скорости</param>
     private void Movement(MovementStatuses status, float speedMultiplier = 1)
     {
         switch (status)
         {
-            case MovementStatuses.Idle: 
-                anim.SetBool("isRunning", false);
+            case MovementStatuses.Idle:
+                // anim.;
+                // anim.SetBool(IsRunning, false);
                 break;
             case MovementStatuses.Run:
             case MovementStatuses.Walk:
-                /// Совпадает ли фактическое направление движения (нажатие на клавиатуре) с
-                /// действительным (направление спрайта игрока)
-                if (Input.GetAxis("Horizontal") > 0 == spriteRenderer.flipX)
+                // Совпадает ли фактическое направление движения (нажатие на клавиатуре) с
+                // действительным (направление спрайта игрока)
+                if (Input.GetAxis("Horizontal") > 0 == Math.Abs(transform.rotation.y - 180) < 0.1)
                 {
-                    spriteRenderer.flipX = !spriteRenderer.flipX;
+                    var angleToRotate = (int) (transform.rotation.y + 180) / 360;
+                    transform.Rotate(new Vector3(0, angleToRotate));
                 }
 
-                float movementSpeed = status.Equals(MovementStatuses.Walk) ? walkSpeed : runSpeed;
+                var movementSpeed = status.Equals(MovementStatuses.Walk) ? walkSpeed : runSpeed;
                 rigidBody.velocity = new Vector2(speedMultiplier * movementSpeed, rigidBody.velocity.y);
 
-                anim.SetBool("isRunning", true);
+                // anim.SetBool(IsRunning, true);
                 break;
             case MovementStatuses.Jump:
                 rigidBody.AddForce(new Vector2(0, jumpPower));
@@ -88,19 +92,18 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Start()
     {
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
     {
-        isOnGround = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckingRadius, groundLayer);
+        isOnGround = Physics2D.OverlapCircle(groundCheckPoint.position, GroundCheckingRadius, groundLayer);
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetAxis("Horizontal") != 0 && !Input.GetKey(KeyCode.LeftShift))
         {
@@ -109,7 +112,8 @@ public class Player : MonoBehaviour
         else if (Input.GetAxisRaw("Horizontal") != 0 && Input.GetKey(KeyCode.LeftShift))
         {
             Movement(MovementStatuses.Run, Input.GetAxis("Horizontal"));
-        } else Movement(MovementStatuses.Idle);
+        }
+        else Movement(MovementStatuses.Idle);
 
         if (isOnGround)
         {
