@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.XR.WSA.Input;
 
 public class Inv : MonoBehaviour
 {
@@ -18,39 +17,42 @@ public class Inv : MonoBehaviour
     public GameObject player;
     [Header("Сила броска")]
     public float trowObj = 2f;
-    private int isRight = 0;
+    public Transform gunPoint;
+    public Animator attentionText;
+    private GameObject activeGun;
 
+    private GameObject ic;
+    private GameObject othr;
+    private GameObject gt;
+    private cellSettings gt1;
+    private cellSettings gt2;
 
 
 
     void Start()
     {
-        
+        ic = gameObject.transform.Find("Inventory Cell").gameObject;
+        othr = ic.transform.Find("Other").gameObject;
+        gt = ic.transform.Find("Gun & Tool").gameObject;
+        gt1 = gt.transform.Find("1").gameObject.GetComponent<cellSettings>();
+        gt2 = gt.transform.Find("2").gameObject.GetComponent<cellSettings>();
     }
 
 
     void Update()
     {
-        GameObject ic = gameObject.transform.Find("Inventory Cell").gameObject;
-        GameObject othr = ic.transform.Find("Other").gameObject;
-        GameObject gt = ic.transform.Find("Gun & Tool").gameObject;
-        cellSettings gt1 = gt.transform.Find("1").gameObject.GetComponent<cellSettings>();
-        cellSettings gt2 = gt.transform.Find("2").gameObject.GetComponent<cellSettings>();
-
-        if (player.GetComponent<SpriteRenderer>().flipX == false) isRight = 1;
-        else if (player.GetComponent<SpriteRenderer>().flipX == true) isRight = -1;
-
-
         if (Input.GetKey(KeyCode.Q))
         {
             GameObject thisDropItem;
             if (gt1.iD != 0 && gt1.active)
             {
-                thisDropItem = Instantiate(DropItem, new Vector3(player.transform.position.x, player.transform.position.y), quaternion.identity);
-                thisDropItem.GetComponent<item>().id = gt1.iD;
-                thisDropItem.GetComponent<SpriteRenderer>().sprite = itemlist[gt1.iD].icon;
+                activeGun.GetComponent<Rigidbody2D>().velocity = new Vector2(activeGun.transform.localScale.x, 2) * trowObj;
+                // thisDropItem = Instantiate(DropItem, new Vector3(player.transform.position.x, player.transform.position.y), quaternion.identity);
+                // thisDropItem.GetComponent<item>().id = gt1.iD;
+                //thisDropItem.GetComponent<SpriteRenderer>().sprite = itemlist[gt1.iD].icon;
                 gt1.iD = 0;
-                thisDropItem.GetComponent<Rigidbody2D>().velocity = new Vector2(thisDropItem.transform.localScale.x * isRight, 1) * trowObj;
+                activeGun.GetComponent<gun>().isActive = false;
+                // thisDropItem.GetComponent<Rigidbody2D>().velocity = new Vector2(thisDropItem.transform.localScale.x * isRight, 1) * trowObj;
             }
             if (gt2.iD != 0 && gt2.active)
             {
@@ -58,14 +60,14 @@ public class Inv : MonoBehaviour
                 thisDropItem.GetComponent<item>().id = gt2.iD;
                 thisDropItem.GetComponent<SpriteRenderer>().sprite = itemlist[gt2.iD].icon;
                 gt2.iD = 0;
-                thisDropItem.GetComponent<Rigidbody2D>().velocity = new Vector2(thisDropItem.transform.localScale.x * isRight, 1) * trowObj;
+                thisDropItem.GetComponent<Rigidbody2D>().velocity = new Vector2(thisDropItem.transform.localScale.x, 1) * trowObj;
             }
         }
 
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            RaycastHit2D[] allHit = Physics2D.RaycastAll(player.transform.position, Vector3.right * player.transform.localScale.x * isRight, distance);
+            RaycastHit2D[] allHit = Physics2D.RaycastAll(player.transform.position, Vector3.right * player.transform.localScale.x, distance);
             for (int i = 0; i < allHit.Length; i++)
             {
                 if (allHit[i].collider.gameObject.layer == 11)
@@ -73,26 +75,36 @@ public class Inv : MonoBehaviour
                     GameObject itItemObj = allHit[i].collider.gameObject;
                     item itItem = itItemObj.GetComponent<item>();
                     bool isPickUp = false;
+                    bool pickUpGun = false; //костыль
                     if (gt1.iD == 0 && itemlist[itItem.id].type == items.typeMove.gun)
                     {
                         gt1.iD = itItem.id;
-                        isPickUp = true;
+                        activeGun = itItemObj;
+                        activeGun.GetComponent<gun>().isActive = true;
+                        pickUpGun = true;
                     }
                     else if (gt2.iD == 0 && itemlist[itItem.id].type == items.typeMove.tool)
                     {
                         gt2.iD = itItem.id;
                         isPickUp = true;
                     }
-                    else if (itemlist[itItem.id].type == items.typeMove.other)
+                    else if (itemlist[itItem.id].type == items.typeMove.ammo)
                     {
                         for (int j = 1; j <= ic.GetComponent<UI>().childCountOther; j++)
                         {
                             string number = j.ToString();
                             GameObject findCell = othr.transform.Find(number).gameObject;
-                            int cellID = findCell.GetComponent<cellSettings>().iD;
-                            if (cellID == 0)
+                            cellSettings cell = findCell.GetComponent<cellSettings>();
+                            if (cell.iD == 0)
                             {
-                                findCell.GetComponent<cellSettings>().iD = itItem.id;
+                                cell.iD = itItem.id;
+                                cell.filingStack+=itemlist[itItem.id].itemUp;
+                                isPickUp = true;
+                                break;
+                            }
+                            else if (cell.iD == itItem.id && itemlist[itItem.id].isStacked)
+                            {
+                                cell.filingStack+=itemlist[itItem.id].itemUp;
                                 isPickUp = true;
                                 break;
                             }
@@ -100,18 +112,23 @@ public class Inv : MonoBehaviour
                     }
                     if (isPickUp == true)
                         Destroy(itItemObj);
-                    else print("Нет места");
+                    else if(!pickUpGun)
+                        attentionText.SetTrigger("isActive");
+                    /* В данный момент есть баг, когда берёшь оружие и в консоли пишет, что нет места, хотя оно взялось.
+                     Дело в том, что из-за небольшой смены механники подбора пропала надобность в удалении объекта. */
+                    
                     break;
                 }
                 if (allHit[i].collider.gameObject.layer == 8) break;
             }
         }
+        if(gt1.iD!=0) activeGun.transform.position = gunPoint.position;
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(player.transform.position, player.transform.position + Vector3.right * isRight * distance);
+        Gizmos.DrawLine(player.transform.position, player.transform.position + Vector3.right * distance);
     }
 
     [Serializable]
@@ -122,11 +139,11 @@ public class Inv : MonoBehaviour
         {
             gun,
             tool,
-            other
+            ammo
         }
         public typeMove type;
-        public bool isGun;
-        public bool isInstrument;
+        public bool isStacked = false;
+        public int itemUp;
     }
 
 }

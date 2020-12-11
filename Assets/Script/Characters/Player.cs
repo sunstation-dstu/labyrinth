@@ -46,6 +46,9 @@ public class Player : MonoBehaviour
     /// </summary>
     const float groundCheckingRadius = 0.2f;
 
+    [HideInInspector]
+    public bool isRight;
+
     /// <summary>
     /// Перечисление состояний движения
     /// </summary>
@@ -70,13 +73,19 @@ public class Player : MonoBehaviour
                 break;
             case MovementStatuses.Run:
             case MovementStatuses.Walk:
-                /// Совпадает ли фактическое направление движения (нажатие на клавиатуре) с
-                /// действительным (направление спрайта игрока)
-                if (Input.GetAxis("Horizontal") > 0 == spriteRenderer.flipX)
+                /// Совпадает ли фактическое направление движения (нажатие на клавиатуре)
+                // if (Input.GetAxis("Horizontal") > 0)
+                //     transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x),transform.localScale.y,transform.localScale.z);
+                // else if (Input.GetAxis("Horizontal") < 0) 
+                //     transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x),transform.localScale.y,transform.localScale.z);
+
+                if (Input.GetAxis("Horizontal") < 0 == isRight)
                 {
-                    spriteRenderer.flipX = !spriteRenderer.flipX;
+                    isRight = !isRight;
+                    transform.localScale = new Vector3(transform.localScale.x*-1,transform.localScale.y,transform.localScale.z);
                 }
 
+                
                 float movementSpeed = status.Equals(MovementStatuses.Walk) ? walkSpeed : runSpeed;
                 rigidBody.velocity = new Vector2(speedMultiplier * movementSpeed, rigidBody.velocity.y);
 
