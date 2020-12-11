@@ -14,6 +14,7 @@ public class connection : MonoBehaviour
     }
     public checkState status;
     public bool isActive = false; //активация элемента в сети
+    public bool animateEnabled = false;
 
     public GameObject connector;  //объект для работы света
     [HideInInspector]
@@ -43,7 +44,9 @@ public class connection : MonoBehaviour
     {
         switch (status) //статус выпадающего списка
         {
-            case checkState.nothing: //этот статус отключает механизм
+            case checkState.nothing:
+                isActive = true;
+            break;//этот статус отключает механизм
             case checkState.leverArm: //этот статус выполняет функцию рычага, возвращает значение активности isActive
                 if (Input.GetKeyDown(KeyCode.F) && youIn) isActive = !isActive;
 
@@ -59,23 +62,32 @@ public class connection : MonoBehaviour
                 }
                 if (buffer == list) //если в конце цикла буфер равен значению массива, то isActive принимает значение true, а буфер обнуляется, иначе наоборот (так же с обнулением буфера)
                 {
-                    GetComponent<Animator>().SetBool("Active", true);
                     isActive = true;
                     buffer = 0;
                 }
                 else
                 {
-                    GetComponent<Animator>().SetBool("Active", false);
                     isActive = false;
                     buffer = 0;
                 }
                 break;
             case checkState.listener: //статус света. Включает свет, если поступившее значение isActive из connector истинно
-                if (connector.GetComponent<connection>().isActive) GetComponent<Animator>().SetBool("Active", true);
-                else GetComponent<Animator>().SetBool("Active", false);
+                if (connector.GetComponent<connection>().isActive)
+                    isActive = true;
+                else
+                    isActive = false;
                 break;
         }
+        if (animateEnabled && isActive)
+            GetComponent<Animator>().SetBool("Active", true);
+        else if (animateEnabled && !isActive)
+            GetComponent<Animator>().SetBool("Active", false);
     }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.green;
+    //    if(connector != null && Input.GetKey(KeyCode.T)) Gizmos.DrawLine(gameObject.transform.position, connector.transform.position);
+    //}
 }
 
 [Serializable]
@@ -84,6 +96,7 @@ public class mediator //класс, который используется в �
     public bool connect; //активность одного из подключённых элементов
     public GameObject chain_element; //элемент цепи
 }
+
 /*На самом деле ещё много чего можно улучшить в этом скрипте: вынести ненужные команды в другие скрипты, избавиться от статуса light и использовать только mediator. Думаю, это можно поправить в будущем.
  А пока довёл код более ли менее до ума, оставляю так.*/
 
