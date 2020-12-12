@@ -55,6 +55,7 @@ jobs:
       
       # Build
       - uses: webbertakken/unity-builder@v0.10
+      - id: buildRunner
         with:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
@@ -64,5 +65,5 @@ jobs:
       # Build output
       - uses: actions/upload-artifact@v1
         with:
-          name: Build
-          path: build
+          name: ${{ matrix.targetPlatform }}-${{ steps.buildRunner.outputs.buildVersion }}
+          path: build/${{ matrix.targetPlatform }}
