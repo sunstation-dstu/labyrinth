@@ -55,7 +55,7 @@ jobs:
       
       # Build
       - uses: webbertakken/unity-builder@v0.10
-      - id: buildRunner
+        id: buildRunner
         with:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
