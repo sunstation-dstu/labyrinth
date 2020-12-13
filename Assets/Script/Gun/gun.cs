@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +15,8 @@ public class gun : MonoBehaviour
     [HideInInspector]
     public bool isActive = false;
 
+    public int reloadTime;
+
     public int patronSize;
     private int patronCount;
 
@@ -21,19 +24,26 @@ public class gun : MonoBehaviour
     private Text gunCellText;
     private GameObject other;
 
-    private Collider2D collider;
+    private Collider2D gunCollider;
     private bool once;
 
     private Rigidbody2D rb;
+    private bool isReloaded = true;
+    
+    public GameObject attentionText;
+    private Text attentionTextEditor;
+    private Animator attentionTextAnimator;
 
     void Start()
     {
-        collider = gameObject.GetComponent<Collider2D>();
+        gunCollider = gameObject.GetComponent<Collider2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
         ui = GameObject.FindGameObjectWithTag("InventoryCell").GetComponent<UI>();
         other = GameObject.FindGameObjectWithTag("InventoryCell").transform.Find("Other").gameObject;
         gunCellText = GameObject.FindGameObjectWithTag("InventoryCell").gameObject.transform.Find("Gun & Tool").gameObject.transform.Find("1").gameObject.transform.Find("patronCounter").gameObject.GetComponent<Text>();
+        attentionTextEditor = attentionText.GetComponent<Text>();
+        attentionTextAnimator = attentionText.GetComponent<Animator>();
     }
 
 
@@ -42,9 +52,9 @@ public class gun : MonoBehaviour
         if (isActive)
         {
             Vector3 cursor;
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && isReloaded)
                 fire();
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R) && isReloaded)
                 reload();
             if(player.isRight)
                 cursor = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -52,9 +62,15 @@ public class gun : MonoBehaviour
                 cursor = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
             
             float rotateZ = Mathf.Atan2(cursor.y, cursor.x) * Mathf.Rad2Deg;
-            
-            if (rotateZ < 90f && rotateZ > -90f) transform.rotation = Quaternion.Euler(0f, 0f, rotateZ);
-            else if (rotateZ > 90f || rotateZ < -90f) transform.rotation = Quaternion.Euler(0f, 0f, 180-rotateZ);
+
+            if (isReloaded)
+            {
+                if (rotateZ < 90f && rotateZ > -90f) transform.rotation = Quaternion.Euler(0f, 0f, rotateZ);
+                else if (rotateZ > 90f || rotateZ < -90f) transform.rotation = Quaternion.Euler(0f, 0f, 180 - rotateZ);
+            } else if (player.isRight)
+                transform.rotation = Quaternion.Euler(0f, 0f, -45);
+            else if(!player.isRight)
+                transform.rotation = Quaternion.Euler(0f, 0f, 45);
 
             if (!player.isRight == transform.localScale.x > 0)
             {
@@ -67,7 +83,7 @@ public class gun : MonoBehaviour
         if (once && isActive)
         {
             rb.bodyType = RigidbodyType2D.Kinematic;
-            collider.enabled = false;
+            gunCollider.enabled = false;
             once = false;
         }
         else if (!once && !isActive)
@@ -75,7 +91,7 @@ public class gun : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Dynamic;
             transform.rotation = Quaternion.identity;
             once = true;
-            collider.enabled = true;
+            gunCollider.enabled = true;
         }
     }
 
@@ -89,28 +105,48 @@ public class gun : MonoBehaviour
         }
     }
 
-    void reload()
+    IEnumerator reloading(int reloadTime)
     {
-        for (int i = 1; i<=ui.childCountOther;i++)
+        isReloaded = false;
+        for (int i = 1; i <= ui.childCountOther; i++)
         {
             string number = i.ToString();
             GameObject findCell = other.transform.Find(number).gameObject;
             cellSettings cell = findCell.GetComponent<cellSettings>();
             if (cell.iD == bulletID && patronCount < patronSize)
             {
-                if (cell.filingStack >= (patronSize - patronCount))
+                attentionTextAnimator.SetBool("reload", true);
+                while (reloadTime > 0)
                 {
-                    int boofer;
-                    boofer = (patronSize - patronCount);
-                    cell.filingStack -= boofer;
-                    patronCount += boofer;
+                    attentionTextEditor.text = $"Перезарядка: {reloadTime}...";
+                    reloadTime--;
+                    if (reloadTime == 0)
+                    {
+                        if (cell.filingStack >= (patronSize - patronCount))
+                        {
+                            int boofer;
+                            boofer = (patronSize - patronCount);
+                            cell.filingStack -= boofer;
+                            patronCount += boofer;
+                        }
+                        else
+                        {
+                            patronCount += cell.filingStack;
+                            cell.filingStack = 0;
+                        }
+                    }
+                    yield return new WaitForSeconds(1);
                 }
-                else
-                {
-                    patronCount += cell.filingStack;
-                    cell.filingStack = 0;
-                }
+                break;
             }
         }
+        attentionTextAnimator.SetBool("reload", false);
+        isReloaded = true;
+        StopCoroutine(reloading(reloadTime));
+    }
+
+    void reload()
+    {
+        StartCoroutine(reloading(reloadTime));
     }
 }

@@ -18,7 +18,10 @@ public class Inv : MonoBehaviour
     [Header("Сила броска")]
     public float trowObj = 2f;
     public Transform gunPoint;
-    public Animator attentionText;
+
+    public GameObject attentionText;
+    private Text attentionTextEditor;
+    private Animator attentionTextAnimator;
     private GameObject activeGun;
 
     private GameObject ic;
@@ -36,6 +39,8 @@ public class Inv : MonoBehaviour
         gt = ic.transform.Find("Gun & Tool").gameObject;
         gt1 = gt.transform.Find("1").gameObject.GetComponent<cellSettings>();
         gt2 = gt.transform.Find("2").gameObject.GetComponent<cellSettings>();
+        attentionTextEditor = attentionText.GetComponent<Text>();
+        attentionTextAnimator = attentionText.GetComponent<Animator>();
     }
 
 
@@ -112,8 +117,11 @@ public class Inv : MonoBehaviour
                     }
                     if (isPickUp == true)
                         Destroy(itItemObj);
-                    else if(!pickUpGun)
-                        attentionText.SetTrigger("isActive");
+                    else if (!pickUpGun && attentionTextAnimator.GetBool("reload") == false)
+                    {
+                        attentionTextEditor.text = "Нет места!";
+                        attentionTextAnimator.SetTrigger("attention");
+                    }
                     /* В данный момент есть баг, когда берёшь оружие и в консоли пишет, что нет места, хотя оно взялось.
                      Дело в том, что из-за небольшой смены механники подбора пропала надобность в удалении объекта. */
                     

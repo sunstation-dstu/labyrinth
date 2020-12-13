@@ -20,37 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f12f173-0f67-4eb9-a2d9-caa9e6a49706" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/contentModel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.labyrinth/riderModule.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Guns.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Guns/Bullets.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Guns/Bullets/bullet1.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Guns/Bullets/bullet1.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Guns/gun_3.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Guns/gun_3.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Gun.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Gun/bullet.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Gun/bullet.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Gun/gun.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Gun/gun.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Gun/selectGun.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Gun/selectGun.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Friction 0.physicsMaterial2D" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Friction 0.physicsMaterial2D.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Text/Text.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Text/Text.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Characters/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Characters/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Gun/gun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Gun/gun.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Inventory/Inv.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Inventory/Inv.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Inventory/cellSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Inventory/cellSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/Guns/gun.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite/Guns/gun.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,8 +44,8 @@
         <option value="$PROJECT_DIR$/Assets/Script/Gun/selectGun.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Characters/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Gun/bullet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Inventory/Inv.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Inventory/cellSettings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Inventory/Inv.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Gun/gun.cs" />
       </list>
     </option>
@@ -134,6 +109,7 @@
       <workItem from="1607450656218" duration="2361000" />
       <workItem from="1607595216539" duration="7937000" />
       <workItem from="1607680579759" duration="12366000" />
+      <workItem from="1607853087051" duration="5781000" />
     </task>
     <servers />
   </component>
@@ -166,9 +142,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607691676317" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607690921519">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607857745576">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607690921519" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607857745576" />
   </component>
 </project>

@@ -7924,6 +7924,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: gun_3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8613801811256477292, guid: 4ab716e7b044acf4fabfc8b74e35b64e, type: 3}
+      propertyPath: attentionText
+      value: 
+      objectReference: {fileID: 461783386}
     - target: {fileID: 8613801811256477293, guid: 4ab716e7b044acf4fabfc8b74e35b64e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.059666
@@ -8045,7 +8049,7 @@ MonoBehaviour:
   player: {fileID: 914430432}
   trowObj: 1.1
   gunPoint: {fileID: 1488560657}
-  attentionText: {fileID: 461783389}
+  attentionText: {fileID: 461783386}
 --- !u!1001 &1576913080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9357,6 +9361,14 @@ PrefabInstance:
       propertyPath: gunCellText
       value: 
       objectReference: {fileID: 1716696806}
+    - target: {fileID: 8613801811256477292, guid: 4ab716e7b044acf4fabfc8b74e35b64e, type: 3}
+      propertyPath: reloadTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8613801811256477292, guid: 4ab716e7b044acf4fabfc8b74e35b64e, type: 3}
+      propertyPath: attentionText
+      value: 
+      objectReference: {fileID: 461783386}
     - target: {fileID: 8613801811256477293, guid: 4ab716e7b044acf4fabfc8b74e35b64e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.67
