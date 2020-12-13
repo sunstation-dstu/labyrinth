@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.XR.WSA.Input;
 
 public class Inv : MonoBehaviour
 {
@@ -111,6 +110,7 @@ public class Inv : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
+        // TODO null catch
         Gizmos.DrawLine(player.transform.position, player.transform.position + Vector3.right * isRight * distance);
     }
 
