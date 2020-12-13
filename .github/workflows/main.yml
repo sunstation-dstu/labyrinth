@@ -1,0 +1,89 @@
+name: Build and Release Actions
+
+on:
+  push:
+    tags:
+      - v*
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Get the version
+        id: getVersion
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - name: Create Release
+        id: createRelease
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ env.RELEASE_VERSION }}
+          draft: false
+          prerelease: false
+
+  build:
+    name: Build for ${{ matrix.targetPlatform }} (Unity ${{ matrix.unityVersion }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        projectPath:
+          - labyrinth
+        unityVersion:
+          - 2020.1.9f1
+        targetPlatform:
+          - StandaloneOSX
+          - StandaloneWindows
+          - StandaloneWindows64
+          - StandaloneLinux64
+    steps:
+      # Checkout
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      # Cache
+      - uses: actions/cache@v1.1.0
+        with:
+          path: ${{ matrix.projectPath }}/Library
+          key: Library-${{ matrix.projectPath }}-${{ matrix.targetPlatform }}
+          restore-keys: |
+            Library-${{ matrix.projectPath }}-
+            Library-
+
+      # Test
+      # Currently we don't need testing 
+#      - uses: webbertakken/unity-test-runner@v1.3
+#        id: testRunner
+#        with:
+#          projectPath: ${{ matrix.projectPath }}
+#          unityVersion: ${{ matrix.unityVersion }}
+
+      # Test Output
+#      - uses: actions/upload-artifact@v1
+#        with:
+#          name: Test results (all modes)
+#          path: ${{ steps.testRunner.outputs.artifactsPath }}
+
+      # Build
+      - uses: webbertakken/unity-builder@v0.10
+        id: buildRunner
+        with:
+          projectPath: ${{ matrix.projectPath }}
+          unityVersion: ${{ matrix.unityVersion }}
+          targetPlatform: ${{ matrix.targetPlatform }}
+          versioning: Semantic
+
+      # Build output
+      - uses: fnkr/github-action-ghr@v1
+        env:
+          GHR_COMPRESS: zip
+          GHR_PATH: build/
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
