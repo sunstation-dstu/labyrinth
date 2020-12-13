@@ -26,35 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f12f173-0f67-4eb9-a2d9-caa9e6a49706" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Characters/Player.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Characters/Player/Player.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Characters/Player/SwitchSuit.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Characters/Player/SwitchSuit.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Characters/Player/Movement/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Characters/Player/Movement/Idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Characters/Player/Movement/Jump/Jumping.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Characters/Player/Movement/Jump/Jumping.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Characters/Player/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Characters/Player/Player.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Characters/Player/Suit.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Characters/Player/Suit/Usual.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Characters/Player/Suit/Usual.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Characters/Player/Suit/With Costume.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Characters/Player/Suit/With Costume.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Characters/Player.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Characters/Player.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Characters/Player/Player.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/%3F%3F%3F%3F%3F.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/%3F%3F%3F%3F%3F.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/New Material.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/New Material.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UpgradedStick.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UpgradedStick.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +35,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="Main-character-animation" />
@@ -73,6 +52,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Script/Mechanisms/connection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6C5B798-1CB1-4F39-B4CE-4A661BFE9B97/53/589ffd36/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/HPCount.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/yuriy/Documents/Unity/Projects/labyrinth/Assets/Script/Characters/Player/SwitchSuit.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yuriy/Documents/Unity/Projects/labyrinth/ProjectSettings/TagManager.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yuriy/Documents/Unity/Projects/labyrinth/ProjectSettings/PackageManagerSettings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Characters/Player/Player.cs" root0="FORCE_HIGHLIGHTING" />
@@ -90,6 +70,7 @@
         <option value="$PROJECT_DIR$/Assets/Material/Friction 0.physicsMaterial2D" />
         <option value="$PROJECT_DIR$/Assets/Script/Characters/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Characters/Player/SwitchSuit.cs" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -156,8 +137,23 @@
       <workItem from="1607467091743" duration="7975000" />
       <workItem from="1607596032229" duration="1091000" />
       <workItem from="1607601816730" duration="3375000" />
-      <workItem from="1607892086587" duration="5239000" />
+      <workItem from="1607892086587" duration="7081000" />
     </task>
+    <task id="LOCAL-00001" summary="Another update without desc&#10;&#10;Серьёзно, нет описания...">
+      <created>1607899024062</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607899024062</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add hack with neck layering">
+      <created>1607900600331</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607900600331</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +187,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Another update without desc&#10;&#10;Серьёзно, нет описания..." />
+    <MESSAGE value="Add hack with neck layering" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add hack with neck layering" />
   </component>
   <component name="WindowStateProjectService">
     <state x="523" y="86" width="863" height="899" key="CommitChangelistDialog2" timestamp="1607888168029">
@@ -270,6 +269,10 @@
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607467012092" />
     <state x="461" y="193" width="1022" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1607602299824" />
+    <state x="555" y="275" width="800" height="563" key="Vcs.Push.Dialog.v2" timestamp="1607899031392">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="555" y="275" width="800" height="563" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1607899031392" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1607463944717">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
