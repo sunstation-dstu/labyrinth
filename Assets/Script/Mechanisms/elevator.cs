@@ -15,7 +15,6 @@ public class elevator : MonoBehaviour
     
     void Start()
     {
-        StartCoroutine(ExecuteAfterTime());
         upperStay = transform.position.y;
         upperSum = upperStay + upperUnit;
         connect = GetComponent<connection>();
@@ -35,14 +34,6 @@ public class elevator : MonoBehaviour
         {
             isActive = false;
             transform.position = new Vector2(transform.position.x, Mathf.Round(transform.position.y));
-        }
-    }
-    IEnumerator ExecuteAfterTime()
-    {
-        while (true)
-        {
-            print("Жопа");
-            yield return new WaitForSeconds(1);
         }
     }
 }

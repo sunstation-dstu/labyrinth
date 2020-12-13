@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4694621-833e-43a0-a7c0-dd41100b2448" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Mechanisms/Terminal.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Mechanisms/Terminal.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Mechanisms/Terminal.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Mechanisms/Terminal.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Mechanisms/terminal.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Mechanisms/terminal.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Mechanisms/Lever Arm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Mechanisms/Lever Arm.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Mechanisms/TileLampPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Mechanisms/TileLampPrefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Mechanisms/connection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Mechanisms/connection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/TestingEnvironmentSprites/TestLabs/Terminal/Terminal.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/TestingEnvironmentSprites/TestLabs/Terminal/Terminal.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/TestingEnvironmentSprites/TestLabs/Terminal/Terminal.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/TestingEnvironmentSprites/TestLabs/Terminal/Terminal.prefab.meta" beforeDir="false" />
+    <list default="true" id="0f12f173-0f67-4eb9-a2d9-caa9e6a49706" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.labyrinth/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Mechanisms/elevator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Mechanisms/elevator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +76,9 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
