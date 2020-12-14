@@ -28,11 +28,13 @@ jobs:
     needs: releaseVersion
     name: Build for ${{ matrix.targetPlatform }} (Unity ${{ matrix.unityVersion }})
     runs-on: ubuntu-latest
+    env:
+      RELEASE_VERSION: ${{ env.RELEASE_VERSION }}
     strategy:
       fail-fast: false
       matrix:
         projectPath:
-          - labyrinth
+          - .
         unityVersion:
           - 2020.1.9f1
         targetPlatform:
