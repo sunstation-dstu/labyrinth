@@ -74,7 +74,7 @@ jobs:
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
           buildName: labyrinth-${{ matrix.targetPlatform }}-${{ env.RELEASE_VERSION }}
-          buildMethod: Editor.Builds.BuildOptions
+#          buildMethod: Editor.Builds.BuildOptions
           versioning: Semantic
 
       # Build output
