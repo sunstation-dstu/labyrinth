@@ -60,7 +60,7 @@ jobs:
 #          path: ${{ steps.testRunner.outputs.artifactsPath }}
 
       # Build
-      - uses: game-ci/unity-builder@v1.5
+      - uses: game-ci/unity-builder@v2.0-aplha-5
         id: buildRunner
         with:
           projectPath: ${{ matrix.projectPath }}
