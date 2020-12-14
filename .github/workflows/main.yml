@@ -10,8 +10,8 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  release:
-    name: Create Release
+  releaseVersion:
+    name: Create Release Version
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -19,14 +19,6 @@ jobs:
       - name: Get the version
         id: getVersion
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-      - name: Create Release
-        id: createRelease
-        uses: actions/create-release@v1
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ env.RELEASE_VERSION }}
-          draft: false
-          prerelease: false
 
   build:
     name: Build for ${{ matrix.targetPlatform }} (Unity ${{ matrix.unityVersion }})
@@ -50,6 +42,7 @@ jobs:
           lfs: true
 
       # Cache
+      # FIXME it wasn't founded in action 
       - uses: actions/cache@v1.1.0
         with:
           path: ${{ matrix.projectPath }}/Library
@@ -79,6 +72,8 @@ jobs:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
+          buildName: ${{ matrix.projectPath }}-${{ matrix.targetPlatform }}-${{ env.RELEASE_VERSION }}
+          buildMethod: Editor.Builds.BuildOptions
           versioning: Semantic
 
       # Build output
