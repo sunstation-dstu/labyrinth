@@ -32,7 +32,7 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - .
+          - labyrinth
         unityVersion:
           - 2020.1.9f1
         targetPlatform:
@@ -51,10 +51,10 @@ jobs:
       - uses: actions/cache@v1.1.0
         with:
           path: ${{ matrix.projectPath }}/Library
-          key: Library ${{ matrix.projectPath }} ${{ matrix.targetPlatform }}
+          key: Library-${{ matrix.projectPath }}-${{ matrix.targetPlatform }}
           restore-keys: |
-            Library ${{ matrix.projectPath }}
-            Library
+            Library-${{ matrix.projectPath }}-
+            Library-
 
       # Test
       # Currently we don't need testing 
