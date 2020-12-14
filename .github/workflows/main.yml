@@ -10,24 +10,52 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  releaseVersion:
-    name: Create Release Version
+  checklicense:
+    name: Check UNITY_LICENSE
+    runs-on: ubuntu-latest
+    outputs:
+      is_unity_license_set: ${{ steps.checklicense_job.outputs.is_unity_license_set }}
+    steps:
+      - name: Check whether unity activation requests should be done
+        id: checklicense_job
+        run: |
+          echo "Skip activation job: ${{ env.UNITY_LICENSE != '' }}"
+          echo "::set-output name=is_unity_license_set::${{ env.UNITY_LICENSE != '' }}"
+
+  activation:
+    needs: [ checklicense ]
+    if: needs.checklicense.outputs.is_unity_license_set == 'false'
+    name: Request activation file 🔑
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+      matrix:
+        unityVersion:
+          - 2020.1.9f1
     steps:
-      - name: Get the version
-        id: getVersion
-        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      # Request manual activation file
+      - name: Request manual activation file
+        id: getManualLicenseFile
+        uses: webbertakken/unity-request-manual-activation-file@v2.0-alpha-1
+        with:
+          unityVersion: ${{ matrix.unityVersion }}
+      # Upload artifact (Unity_v20XX.X.XXXX.alf)
+      - name: Expose as artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: ${{ steps.getManualLicenseFile.outputs.filePath }}
+          path: ${{ steps.getManualLicenseFile.outputs.filePath }}
 
   build:
+    needs: [ checklicense ]
+    if: needs.checklicense.outputs.is_unity_license_set == 'true'
     name: Build for ${{ matrix.targetPlatform }} (Unity ${{ matrix.unityVersion }})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         projectPath:
-          - labyrinth
+          - .
         unityVersion:
           - 2020.1.9f1
         targetPlatform:
@@ -36,6 +64,10 @@ jobs:
           - StandaloneWindows64
           - StandaloneLinux64
     steps:
+      - name: Get the version
+        id: getVersion
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
       # Checkout
       - uses: actions/checkout@v2
         with:
@@ -53,7 +85,7 @@ jobs:
 
       # Test
       # Currently we don't need testing 
-#      - uses: webbertakken/unity-test-runner@v1.3
+#      - uses: game-ci/unity-test-runner@v1.7
 #        id: testRunner
 #        with:
 #          projectPath: ${{ matrix.projectPath }}
@@ -66,15 +98,13 @@ jobs:
 #          path: ${{ steps.testRunner.outputs.artifactsPath }}
 
       # Build
-      - uses: webbertakken/unity-builder@v0.10
+      - uses: game-ci/unity-builder@v2.0-aplha-5
         id: buildRunner
         with:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
-          buildName: ${{ matrix.projectPath }}-${{ matrix.targetPlatform }}-${{ env.RELEASE_VERSION }}
-          buildMethod: Editor.Builds.BuildOptions
-          versioning: Semantic
+          buildName: labyrinth-${{ matrix.targetPlatform }}-${{ env.RELEASE_VERSION }}
 
       # Build output
       - uses: fnkr/github-action-ghr@v1
