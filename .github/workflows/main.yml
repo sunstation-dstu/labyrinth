@@ -10,7 +10,40 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
+  checklicense:
+    name: Check UNITY_LICENSE
+    runs-on: ubuntu-latest
+    outputs:
+      is_unity_license_set: ${{ steps.checklicense_job.outputs.is_unity_license_set }}
+    steps:
+      - name: Check whether unity activation requests should be done
+        id: checklicense_job
+        run: |
+          echo "Skip activation job: ${{ env.UNITY_LICENSE != '' }}"
+          echo "::set-output name=is_unity_license_set::${{ env.UNITY_LICENSE != '' }}"
+
+  activation:
+    needs: [ checklicense ]
+    if: needs.checklicense.outputs.is_unity_license_set == 'false'
+    name: Request activation file 🔑
+    runs-on: ubuntu-latest
+    steps:
+      # Request manual activation file
+      - name: Request manual activation file
+        id: getManualLicenseFile
+        uses: webbertakken/unity-request-manual-activation-file@master
+        with:
+          unityVersion: ${{ env.UNITY_VERSION }}
+      # Upload artifact (Unity_v20XX.X.XXXX.alf)
+      - name: Expose as artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: ${{ steps.getManualLicenseFile.outputs.filePath }}
+          path: ${{ steps.getManualLicenseFile.outputs.filePath }}
+
   build:
+    needs: [ checklicense ]
+    if: needs.checklicense.outputs.is_unity_license_set == 'true'
     name: Build for ${{ matrix.targetPlatform }} (Unity ${{ matrix.unityVersion }})
     runs-on: ubuntu-latest
     strategy:
@@ -67,7 +100,6 @@ jobs:
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
           buildName: labyrinth-${{ matrix.targetPlatform }}-${{ env.RELEASE_VERSION }}
-          versioning: Semantic
 
       # Build output
       - uses: fnkr/github-action-ghr@v1
