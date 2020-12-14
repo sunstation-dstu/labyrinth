@@ -69,7 +69,7 @@ public class Inv : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            var allHit = Physics2D.RaycastAll(player.transform.position, Vector3.right * player.transform.localScale.x, distance);
+            var allHit = Physics2D.RaycastAll(new Vector2(player.transform.position.x, player.transform.position.y + 1), Vector3.right * player.transform.localScale.x, distance);
             for (var i = 0; i < allHit.Length; i++)
             {
                 if (allHit[i].collider.gameObject.layer == 11)
@@ -128,7 +128,7 @@ public class Inv : MonoBehaviour
     {
         Gizmos.color = Color.red;
         // TODO null catch
-        Gizmos.DrawLine(player.transform.position, player.transform.position + Vector3.right * distance);
+        Gizmos.DrawLine(new Vector2(player.transform.position.x, player.transform.position.y + 1), new Vector2(player.transform.position.x, player.transform.position.y + 1) + Vector2.right * distance);
     }
 
     [Serializable]

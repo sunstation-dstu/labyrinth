@@ -97,6 +97,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        isRight = true;
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
     }
