@@ -23,10 +23,10 @@ public class CameraController : MonoBehaviour
         lastx = Mathf.RoundToInt(player.position.x);
         if(playerIsLeft)
         {
-            transform.position = new Vector3(player.position.x - offcet.x, player.position.y - offcet.y, player.position.z - transform.position.z);
+            transform.position = new Vector3(player.position.x - offcet.x, player.position.y - offcet.y, transform.position.z);
         } else
         {
-            transform.position = new Vector3(player.position.x + offcet.x, player.position.y + offcet.y, player.position.z + transform.position.z);
+            transform.position = new Vector3(player.position.x + offcet.x, player.position.y + offcet.y, transform.position.z);
         }
     }
     
@@ -41,11 +41,11 @@ public class CameraController : MonoBehaviour
             Vector3 target;
             if (isleft)
             {
-                target = new Vector3(player.position.x - offcet.x, player.position.y + offcet.y, player.position.z - transform.position.z);
+                target = new Vector3(player.position.x - offcet.x, player.position.y + offcet.y, transform.position.z);
             }
             else
             {
-                target = new Vector3(player.position.x + offcet.x, player.position.y + offcet.y, player.position.z + transform.position.z);
+                target = new Vector3(player.position.x + offcet.x, player.position.y + offcet.y, transform.position.z);
             }
             Vector3 currentPosition = Vector3.Lerp(transform.position, target, dumping * Time.deltaTime);
             transform.position = currentPosition;

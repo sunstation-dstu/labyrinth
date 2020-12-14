@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
+  m_Name: MainCharacterSpriteLibrary
+  m_EditorClassIdentifier: 
+  m_Labels:
+  - m_Name: Head
+    m_Hash: 130111906
+    m_CategoryList:
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: 922342619857739288, guid: 590596e9188694647aef7776ee70114d, type: 3}
+    - m_Name: Costume
+      m_Hash: -189560249
+      m_Sprite: {fileID: 889441033408738601, guid: a39683217314081458f061aef8a62031, type: 3}
+  - m_Name: Chest
+    m_Hash: 981834931
+    m_CategoryList:
+    - m_Name: Normal
+      m_Hash: 640249298
+      m_Sprite: {fileID: 4790814583973537266, guid: 590596e9188694647aef7776ee70114d, type: 3}
+    - m_Name: Costume
+      m_Hash: -189560249
+      m_Sprite: {fileID: 4368854418094424193, guid: a39683217314081458f061aef8a62031, type: 3}
