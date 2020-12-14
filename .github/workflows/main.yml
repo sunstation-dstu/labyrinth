@@ -17,7 +17,7 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - .
+          - labyrinth/labyrinth
         unityVersion:
           - 2020.1.9f1
         targetPlatform:
@@ -67,7 +67,6 @@ jobs:
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
           buildName: labyrinth-${{ matrix.targetPlatform }}-${{ env.RELEASE_VERSION }}
-#          buildMethod: Editor.Builds.BuildOptions
           versioning: Semantic
 
       # Build output
