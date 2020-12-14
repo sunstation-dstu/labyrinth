@@ -53,8 +53,8 @@ jobs:
           path: ${{ matrix.projectPath }}/Library
           key: Library ${{ matrix.projectPath }} ${{ matrix.targetPlatform }}
           restore-keys: |
-            Library ${{ matrix.projectPath }} 
-            Library 
+            Library ${{ matrix.projectPath }}
+            Library
 
       # Test
       # Currently we don't need testing 
