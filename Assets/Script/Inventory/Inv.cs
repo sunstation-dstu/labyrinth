@@ -52,12 +52,9 @@ public class Inv : MonoBehaviour
             if (gt1.iD != 0 && gt1.active)
             {
                 activeGun.GetComponent<Rigidbody2D>().velocity = new Vector2(activeGun.transform.localScale.x, 2) * trowObj;
-                // thisDropItem = Instantiate(DropItem, new Vector3(player.transform.position.x, player.transform.position.y), quaternion.identity);
-                // thisDropItem.GetComponent<item>().id = gt1.iD;
-                //thisDropItem.GetComponent<SpriteRenderer>().sprite = itemlist[gt1.iD].icon;
+                
                 gt1.iD = 0;
                 activeGun.GetComponent<gun>().isActive = false;
-                // thisDropItem.GetComponent<Rigidbody2D>().velocity = new Vector2(thisDropItem.transform.localScale.x * isRight, 1) * trowObj;
             }
             if (gt2.iD != 0 && gt2.active)
             {
@@ -72,15 +69,16 @@ public class Inv : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            RaycastHit2D[] allHit = Physics2D.RaycastAll(player.transform.position, Vector3.right * player.transform.localScale.x, distance);
-            for (int i = 0; i < allHit.Length; i++)
+            var allHit = Physics2D.RaycastAll(player.transform.position, Vector3.right * player.transform.localScale.x, distance);
+            for (var i = 0; i < allHit.Length; i++)
             {
                 if (allHit[i].collider.gameObject.layer == 11)
                 {
-                    GameObject itItemObj = allHit[i].collider.gameObject;
-                    item itItem = itItemObj.GetComponent<item>();
-                    bool isPickUp = false;
-                    bool pickUpGun = false; //костыль
+                    var itItemObj = allHit[i].collider.gameObject;
+                    var itItem = itItemObj.GetComponent<item>();
+                    var isPickUp = false;
+                    //костыль
+                    var pickUpGun = false;
                     if (gt1.iD == 0 && itemlist[itItem.id].type == items.typeMove.gun)
                     {
                         gt1.iD = itItem.id;
@@ -117,14 +115,7 @@ public class Inv : MonoBehaviour
                     }
                     if (isPickUp == true)
                         Destroy(itItemObj);
-                    else if (!pickUpGun && attentionTextAnimator.GetBool("reload") == false)
-                    {
-                        attentionTextEditor.text = "Нет места!";
-                        attentionTextAnimator.SetTrigger("attention");
-                    }
-                    /* В данный момент есть баг, когда берёшь оружие и в консоли пишет, что нет места, хотя оно взялось.
-                     Дело в том, что из-за небольшой смены механники подбора пропала надобность в удалении объекта. */
-                    
+                    else print("Нет места");
                     break;
                 }
                 if (allHit[i].collider.gameObject.layer == 8) break;
@@ -136,6 +127,7 @@ public class Inv : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
+        // TODO null catch
         Gizmos.DrawLine(player.transform.position, player.transform.position + Vector3.right * distance);
     }
 
