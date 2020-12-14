@@ -19,6 +19,10 @@ jobs:
       - name: Get the version
         id: getVersion
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - name: Test
+        run: |
+          echo $RELEASE_VERSION
+          echo ${{ env.RELEASE_VERSION }}
 
   build:
     needs: releaseVersion
