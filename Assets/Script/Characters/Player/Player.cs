@@ -1,6 +1,4 @@
-﻿using System;
-using Unity.Mathematics;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Класс Игрока
@@ -49,6 +47,9 @@ public class Player : MonoBehaviour
     /// </summary>
     private const float GroundCheckingRadius = 0.2f;
 
+    [HideInInspector]
+    public bool isRight;
+
     /// <summary>
     /// Перечисление состояний движения
     /// </summary>
@@ -76,10 +77,11 @@ public class Player : MonoBehaviour
             case MovementStatuses.Walk:
                 // Совпадает ли фактическое направление движения (нажатие на клавиатуре) с
                 // действительным (направление спрайта игрока)
-                if (Input.GetAxis("Horizontal") > 0 && (transform.localScale.x < 0))
-                    transform.localScale = new Vector3(transform.localScale.x*-1, transform.localScale.y, transform.localScale.z);
-                else if (Input.GetAxis("Horizontal") < 0 && (transform.localScale.x > 0))
-                    transform.localScale = new Vector3(transform.localScale.x*-1, transform.localScale.y, transform.localScale.z);
+                if (Input.GetAxis("Horizontal") < 0 == isRight)
+                {
+                    isRight = !isRight;
+                    transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+                }
 
                 var movementSpeed = status.Equals(MovementStatuses.Walk) ? walkSpeed : runSpeed;
                 rigidBody.velocity = new Vector2(speedMultiplier * movementSpeed, rigidBody.velocity.y);
