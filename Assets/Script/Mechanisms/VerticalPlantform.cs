@@ -23,7 +23,8 @@ public class VerticalPlantform : MonoBehaviour
    
             if(waitTime <= 0)
             {
-                effector.rotationalOffset = 180f;
+                //effector.rotationalOffset = 180f;
+                Physics2D.IgnoreLayerCollision(9, 12, true);
                 waitTime = 0.1f;
             }
             else
@@ -33,7 +34,7 @@ public class VerticalPlantform : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.W))
         {
-            effector.rotationalOffset = 0;
+            Physics2D.IgnoreLayerCollision(9, 12, false);
         }
     }
 }
