@@ -33,7 +33,7 @@ public class elevator : MonoBehaviour
         if(transform.position.y > upperSum - 0.005f)
         {
             isActive = false;
-            transform.position = new Vector2(transform.position.x, Mathf.Round(transform.position.y));
+            transform.position = new Vector2(transform.position.x, Mathf.Round(transform.position.y*10)/10);
         }
     }
 }

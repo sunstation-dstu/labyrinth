@@ -126,5 +126,7 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W))
                 Movement(MovementStatuses.Jump);
         }
+        
+        
     }
 }
