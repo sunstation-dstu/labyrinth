@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Experimental.U2D.Animation;
 using UnityEngine.UI;
 
 public class gun : MonoBehaviour
@@ -11,6 +12,8 @@ public class gun : MonoBehaviour
     public GameObject bulletPrefab;
     public int bulletID;
     public Transform muzzleCheckPoint;
+    public Transform pointLeft;
+    public Transform pointRight;
     private Player player;
     [HideInInspector]
     public bool isActive = false;
@@ -29,28 +32,31 @@ public class gun : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isReloaded = true;
+    private SpriteRenderer sr;
+
+    private Transform armR;
+    private Transform armL;
     
-    public GameObject attentionText;
-    private Text attentionTextEditor;
-    private Animator attentionTextAnimator;
 
     void Start()
     {
+        armL = GameObject.FindGameObjectWithTag("LeftForearmLS").transform;
+        armR = GameObject.FindGameObjectWithTag("RightForearmLS").transform;
+        sr = GetComponent<SpriteRenderer>();
         gunCollider = gameObject.GetComponent<Collider2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        rb = GetComponent<Rigidbody2D>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
         ui = GameObject.FindGameObjectWithTag("InventoryCell").GetComponent<UI>();
         other = GameObject.FindGameObjectWithTag("InventoryCell").transform.Find("Other").gameObject;
         gunCellText = GameObject.FindGameObjectWithTag("InventoryCell").gameObject.transform.Find("Gun & Tool").gameObject.transform.Find("1").gameObject.transform.Find("patronCounter").gameObject.GetComponent<Text>();
-        attentionTextEditor = attentionText.GetComponent<Text>();
-        attentionTextAnimator = attentionText.GetComponent<Animator>();
     }
 
 
     void Update()
     {
-        if (isActive)
+        if (isActive && ui.gt1.active)
         {
+            sr.enabled = true;
             Vector3 cursor;
             if (Input.GetKeyDown(KeyCode.Mouse0) && isReloaded)
                 fire();
@@ -76,9 +82,17 @@ public class gun : MonoBehaviour
             {
                 transform.localScale = new Vector3(transform.localScale.x*-1, transform.localScale.y,transform.localScale.z);
             }
+            armL.position = pointLeft.position;
+            armR.position = pointRight.position;
 
             gunCellText.text = $"{patronCount}/{patronSize}";
         }
+        else if(isActive && !ui.gt1.active)
+        {
+            sr.enabled = false;
+        }
+        else if (!isActive)
+            gunCellText.text = "";
 
         if (once && isActive)
         {
@@ -115,12 +129,11 @@ public class gun : MonoBehaviour
             cellSettings cell = findCell.GetComponent<cellSettings>();
             if (cell.iD == bulletID && patronCount < patronSize)
             {
-                attentionTextAnimator.SetBool("reload", true);
+                ui.reloading();
                 while (reloadTime > 0)
                 {
-                    attentionTextEditor.text = $"Перезарядка: {reloadTime}...";
-                    reloadTime--;
-                    if (reloadTime == 0)
+                    yield return new WaitForSeconds(1);
+                    if (reloadTime == 1)
                     {
                         if (cell.filingStack >= (patronSize - patronCount))
                         {
@@ -135,12 +148,12 @@ public class gun : MonoBehaviour
                             cell.filingStack = 0;
                         }
                     }
-                    yield return new WaitForSeconds(1);
+                    reloadTime--;
                 }
                 break;
             }
         }
-        attentionTextAnimator.SetBool("reload", false);
+        ui.stopR();
         isReloaded = true;
         StopCoroutine(reloading(reloadTime));
     }

@@ -7,6 +7,9 @@ TagManager:
   - SwitchableSuite
   - InventoryCell
   - Guns
+  - Inventory
+  - LeftForearmLS
+  - RightForearmLS
   layers:
   - Default
   - TransparentFX
