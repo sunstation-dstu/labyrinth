@@ -15,7 +15,8 @@ public class RayScan : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag(targetTag).transform;
     }
-
+    
+    
     bool GetRaycast(Vector2 dir)
     {
         bool result = false;
