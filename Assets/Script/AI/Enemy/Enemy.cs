@@ -25,6 +25,15 @@ public class Enemy : MonoBehaviour
     public bool attack;
     private bool stopIt;
     private HPCount hp;
+    private Patrolling patrolling;
+    
+    private enum MovementStatuses
+    {
+        Idle = 0,
+        Walk = 1,
+        Fighting = 2,
+        Patrol = 3
+    }
 
     void Start()
     {
@@ -32,6 +41,7 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         hp = playerTransform.GetComponent<HPCount>();
+        patrolling = GetComponent<Patrolling>();
     }
     
 
@@ -79,23 +89,50 @@ public class Enemy : MonoBehaviour
 
         return a;
     }
+
+    private void Movement(MovementStatuses status)
+    {
+        switch (status)
+        {
+            case MovementStatuses.Idle:
+                anim.SetBool("Walk", false);
+                anim.SetBool("Fighting", false);
+                break;
+            case MovementStatuses.Walk:
+                anim.SetBool("Fighting", false);
+                anim.SetBool("Walk", true);
+                if(isRight)
+                    rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
+                else
+                    rb.velocity = new Vector2(-movementSpeed, rb.velocity.y);
+                break;
+            case MovementStatuses.Fighting:
+                anim.SetBool("Walk", false);
+                anim.SetBool("Fighting", true);
+                break;
+            case MovementStatuses.Patrol:
+                anim.SetBool("Walk", true);
+                anim.SetBool("Fighting", false);
+                if(isRight)
+                    rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
+                else
+                    rb.velocity = new Vector2(-movementSpeed, rb.velocity.y);
+                break;
+        }
+    }
     
     void Update()
     {
         enemyDistance = (transform.position - playerTransform.position).sqrMagnitude;
-        if (Vector2.Distance(transform.position, playerTransform.position) < distance)
+        if (Vector2.Distance(transform.position, playerTransform.position) < distance && hp.hp > 0)
         {
             var res = RayToScan();
             if (res)
             {
                 isActive = true;
             }
-            else
-            {
-                // Поиск цели...
-            }
         }
-        
+
         if (enemyDistance > 500)
         {
             onTrigger = false;
@@ -108,23 +145,13 @@ public class Enemy : MonoBehaviour
 
         if (isActive && onTrigger)
         {
-            if (isRight && enemyDistance > 4f)
-            {
-                anim.SetBool("Fighting", false);
-                anim.SetBool("Walk", true);
-                rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
-            }
-            else if (!isRight && enemyDistance > 4f)
-            {
-                anim.SetBool("Fighting", false);
-                anim.SetBool("Walk", true);
-                rb.velocity = new Vector2(-movementSpeed, rb.velocity.y);
-            }
-            else if (enemyDistance <= 4f)
-            {
-                anim.SetBool("Walk", false);
-                anim.SetBool("Fighting", true);
-            }
+            if (enemyDistance > 4f)
+                Movement(MovementStatuses.Walk);
+            else if (enemyDistance <= 4f && hp.hp > 0)
+                Movement(MovementStatuses.Fighting);
+            else
+                Movement(MovementStatuses.Idle);
+                
 
             if (transform.position.x - playerTransform.position.x < 0 == !isRight)
             {
@@ -141,6 +168,18 @@ public class Enemy : MonoBehaviour
             }
             else if (!attack)
                 stopIt = true;
+        } else if (!isActive)
+        {
+            if (transform.position.x - patrolling.points[patrolling.currentPoint].position.x < 0 == !isRight)
+            {
+                isRight = !isRight;
+                transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y,
+                    transform.localScale.z);
+            }
+            Movement(MovementStatuses.Patrol);
         }
+
+        if (hp.hp == 0)
+            isActive = false;
     }
 }

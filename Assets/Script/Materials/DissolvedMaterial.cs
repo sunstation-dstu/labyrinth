@@ -23,7 +23,6 @@ public class DissolvedMaterial : MonoBehaviour
             var renderer = transform.GetComponent<Renderer>();
             if (renderer == null) return;
             
-            Debug.Log(renderer);
             renderers.Add(renderer);
             renderer.material = new Material(material);
         }

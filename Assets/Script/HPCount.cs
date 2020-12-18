@@ -32,6 +32,8 @@ public class HPCount : MonoBehaviour
         }
         else
         {  
+            hpCount.value = hp;
+            hp = 0;
             t += Time.deltaTime / deathDuration;
             material.dissolveAmount = Mathf.Lerp(0, 1, t);
         }
