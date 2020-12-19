@@ -16,25 +16,12 @@ public class VerticalPlantform : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.S))
         {
-            waitTime = 0.1f;
+            Physics2D.IgnoreLayerCollision(9, 12, false);
         }
         if (Input.GetKey(KeyCode.S))
         {
-   
-            if(waitTime <= 0)
-            {
-                //effector.rotationalOffset = 180f;
                 Physics2D.IgnoreLayerCollision(9, 12, true);
-                waitTime = 0.1f;
-            }
-            else
-            {
-                waitTime -= Time.deltaTime;
-            }
         }
-        if (Input.GetKey(KeyCode.W))
-        {
-            Physics2D.IgnoreLayerCollision(9, 12, false);
-        }
+
     }
 }
