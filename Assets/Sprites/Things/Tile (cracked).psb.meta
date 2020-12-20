@@ -146,4 +146,6 @@ ScriptedImporter:
   textureAssetName: Tile (cracked) Texture
   prefabAssetName: Tile (cracked) Prefab
   spriteLibAssetName: Tile (cracked) Sprite Lib
-  secondarySpriteTextures: []
+  secondarySpriteTextures:
+  - name: _NormalMap
+    texture: {fileID: 3214105039545446846, guid: 20239e2a96e84804f9b06d5761945a77, type: 3}

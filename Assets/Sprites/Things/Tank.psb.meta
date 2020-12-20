@@ -32,7 +32,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 300
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -100,7 +100,7 @@ ScriptedImporter:
       y: 4
       width: 972
       height: 1674
-    spriteID: 97d89f89c33943346957203d626655f3
+    spriteID: 6ffc2ece6fa80e145aa75241f7856459
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -110,7 +110,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: -110, y: -146}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
@@ -118,7 +118,7 @@ ScriptedImporter:
   importHiddenLayers: 0
   importedTextureWidth: 1024
   importedTextureHeight: 2048
-  documentSize: {x: 972, y: 1674}
+  documentSize: {x: 1200, y: 2100}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
@@ -134,7 +134,7 @@ ScriptedImporter:
     spriteName: "\u0421\u043B\u043E\u0439 1"
     isGroup: 0
     parentIndex: -1
-    spriteID: 97d89f89c33943346957203d626655f3
+    spriteID: 6ffc2ece6fa80e145aa75241f7856459
     layerID: 2
     mosaicPosition: {x: 4, y: 4}
   characterData:

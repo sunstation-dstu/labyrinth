@@ -146,4 +146,6 @@ ScriptedImporter:
   textureAssetName: Tile (big piece) Texture
   prefabAssetName: Tile (big piece) Prefab
   spriteLibAssetName: Tile (big piece) Sprite Lib
-  secondarySpriteTextures: []
+  secondarySpriteTextures:
+  - name: _NormalMap
+    texture: {fileID: -7455339091176611013, guid: 5ed23b617ea7e82418d26a42b384cae1, type: 3}

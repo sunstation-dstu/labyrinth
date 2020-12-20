@@ -257,6 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   status: 0
   isActive: 0
+  animateEnabled: 1
   connector: {fileID: 0}
   list: 0
   med: []
