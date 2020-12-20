@@ -150,7 +150,6 @@ public class Player : MonoBehaviour
                 anim.SetBool("InFlight", false);
             else if (i == allHit.Length-1 && !boofer)
                 anim.SetBool("InFlight", true);
-            print(boofer);
         }
         // TODO
         Debug.DrawRay(transform.position,Vector3.down * stopJumpingDistance, Color.yellow);

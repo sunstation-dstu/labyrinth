@@ -18,6 +18,7 @@ public class Inv : MonoBehaviour
     [Header("Сила броска")]
     public float trowObj = 2f;
     public Transform gunPoint;
+    public GameObject costume;
     
     private GameObject activeGun;
 
@@ -75,6 +76,12 @@ public class Inv : MonoBehaviour
                     var itItem = itItemObj.GetComponent<item>();
                     var isPickUp = false;
                     var isDestroy = true;
+                    if (itItem.id == 99)
+                    {
+                        player.GetComponent<SwitchSuit>().isCostume = true;
+                        Destroy(itItemObj);
+                        break;
+                    }
                     if (gt1.iD == 0 && itemlist[itItem.id].type == items.typeMove.gun)
                     {
                         gt1.iD = itItem.id;
