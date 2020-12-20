@@ -32,7 +32,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 300
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -89,7 +89,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: "\u0421\u043B\u043E\u0439 1"
+  - name: "\u0421\u043B\u043E\u0439 2"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -99,8 +99,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 1042
-      height: 569
-    spriteID: 49a8bbfb0daa1b8459978e298800fdac
+      height: 584
+    spriteID: dd5168dfba6a4f542b29714f3570df81
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -118,7 +118,7 @@ ScriptedImporter:
   importHiddenLayers: 0
   importedTextureWidth: 2048
   importedTextureHeight: 1024
-  documentSize: {x: 1042, y: 569}
+  documentSize: {x: 1042, y: 600}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
@@ -130,12 +130,12 @@ ScriptedImporter:
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: "\u0421\u043B\u043E\u0439 1"
-    spriteName: "\u0421\u043B\u043E\u0439 1"
+  - name: "\u0421\u043B\u043E\u0439 2"
+    spriteName: "\u0421\u043B\u043E\u0439 2"
     isGroup: 0
     parentIndex: -1
-    spriteID: 49a8bbfb0daa1b8459978e298800fdac
-    layerID: 2
+    spriteID: dd5168dfba6a4f542b29714f3570df81
+    layerID: 4
     mosaicPosition: {x: 4, y: 4}
   characterData:
     bones: []

@@ -10,7 +10,8 @@ public class connection : MonoBehaviour
         nothing = 0,
         leverArm = 1,
         mediator = 2,
-        listener = 3
+        listener = 3,
+        button = 4
     }
     public checkState status;
     public bool isActive = false; //активация элемента в сети
@@ -48,10 +49,8 @@ public class connection : MonoBehaviour
                 isActive = true;
             break;//этот статус отключает механизм
             case checkState.leverArm: //этот статус выполняет функцию рычага, возвращает значение активности isActive
-                if (Input.GetKeyDown(KeyCode.F) && youIn) isActive = !isActive;
-
-                if (isActive) transform.rotation = Quaternion.Euler(0, 0, 180);
-                else transform.rotation = Quaternion.Euler(0, 0, 0);
+                if (Input.GetKeyDown(KeyCode.E) && youIn) 
+                    isActive = !isActive;
                 break;
             case checkState.mediator: //этот статус принимает значения активности от рычагов или других посредников в зависимости от размера массива
                 for (int i = 0; i < list; i++) //проверка активности всех ячеек массива через буфер
@@ -77,17 +76,24 @@ public class connection : MonoBehaviour
                 else
                     isActive = false;
                 break;
+            case checkState.button:
+                if(!isActive && Input.GetKeyDown(KeyCode.E) && youIn)
+                    StartCoroutine(button());
+                break;
         }
         if (animateEnabled && isActive)
             GetComponent<Animator>().SetBool("Active", true);
         else if (animateEnabled && !isActive)
             GetComponent<Animator>().SetBool("Active", false);
     }
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.green;
-    //    if(connector != null && Input.GetKey(KeyCode.T)) Gizmos.DrawLine(gameObject.transform.position, connector.transform.position);
-    //}
+
+    IEnumerator button()
+    {
+        isActive = true;
+        yield return new WaitForSeconds(1);
+        isActive = false;
+    }
+    
 }
 
 [Serializable]
