@@ -43,7 +43,11 @@ public class Enemy : MonoBehaviour
         hp = playerTransform.GetComponent<HPCount>();
         patrolling = GetComponent<Patrolling>();
     }
-    
+
+    public void Death()
+    {
+        Destroy(gameObject);
+    }
 
     private bool GetRaycast(Vector2 dir)
     {
