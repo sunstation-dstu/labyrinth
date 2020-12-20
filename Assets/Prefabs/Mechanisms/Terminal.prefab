@@ -486,6 +486,7 @@ GameObject:
   - component: {fileID: 8707227671309414246}
   - component: {fileID: 6862667741977670231}
   - component: {fileID: -188407965301913487}
+  - component: {fileID: 3148291561257194959}
   m_Layer: 0
   m_Name: Terminal
   m_TagString: Untagged
@@ -574,3 +575,16 @@ MonoBehaviour:
   connector: {fileID: 0}
   list: 0
   med: []
+--- !u!114 &3148291561257194959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8637472680784830571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d337c241313ffc47bf86799d109e357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terminalUI: {fileID: 0}
