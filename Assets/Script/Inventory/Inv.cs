@@ -111,7 +111,7 @@ public class Inv : MonoBehaviour
                         }
                     }
                     if (isPickUp && isDestroy)
-                        { Destroy(itItemObj); SelectionSound.Play(); } // звук прыжка
+                        { Destroy(itItemObj); SelectionSound.Play(); } // звук подбора
                     else if (!isPickUp)
                     {
                         inventoryUI.noPlace();
@@ -121,7 +121,7 @@ public class Inv : MonoBehaviour
                 if (allHit[i].collider.gameObject.layer == 8) break;
             }
         }
-        if(gt1.iD!=0) activeGun.transform.position = gunPoint.position;
+        if (gt1.iD != 0) activeGun.transform.position = gunPoint.position;
     }
 
     private void OnDrawGizmos()

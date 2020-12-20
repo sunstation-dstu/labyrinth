@@ -39,7 +39,9 @@ public class gun : MonoBehaviour
 
     public AudioSource RechargeSound;
     public AudioSource ShotSound;
-    public AudioSource GunEmptySound;
+    public AudioSource GunEmptySound;       // звуки оружия
+    public AudioSource SelectionGunSound;
+    public bool Actived = false;
 
     void Start()
     {
@@ -57,6 +59,10 @@ public class gun : MonoBehaviour
 
     void Update()
     {
+        if ((isActive)&&(Actived==false))
+            { Actived = true; SelectionGunSound.Play(); } // звук подбора оружия
+        if (!isActive) Actived = false;
+
         if (isActive && ui.gt1.active)
         {
             sr.enabled = true;
