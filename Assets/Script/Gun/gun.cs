@@ -36,7 +36,10 @@ public class gun : MonoBehaviour
 
     private Transform armR;
     private Transform armL;
-    
+
+    public AudioSource RechargeSound;
+    public AudioSource ShotSound;
+    public AudioSource GunEmptySound;
 
     void Start()
     {
@@ -116,7 +119,9 @@ public class gun : MonoBehaviour
             GameObject bullet;
             bullet = Instantiate(bulletPrefab, muzzleCheckPoint.position, transform.rotation);
             patronCount--;
+            ShotSound.Play();
         }
+        else GunEmptySound.Play();
     }
 
     IEnumerator reloading(int reloadTime)
@@ -130,6 +135,7 @@ public class gun : MonoBehaviour
             if (cell.iD == bulletID && patronCount < patronSize)
             {
                 ui.reloading();
+                RechargeSound.Play();
                 while (reloadTime > 0)
                 {
                     yield return new WaitForSeconds(1);

@@ -26,6 +26,9 @@ public class Enemy : MonoBehaviour
     private bool stopIt;
     private HPCount hp;
     private Patrolling patrolling;
+
+    public AudioSource EnemySound1; // звук enemy 1
+    public float SoundDelay = 12;
     
     private enum MovementStatuses
     {
@@ -181,5 +184,10 @@ public class Enemy : MonoBehaviour
 
         if (hp.hp == 0)
             isActive = false;
+
+        if (SoundDelay <= 0)
+            { EnemySound1.Play(); SoundDelay = 12; } // звук enemy 1
+        else
+            SoundDelay -= Time.deltaTime;
     }
 }
