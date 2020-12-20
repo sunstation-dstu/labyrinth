@@ -7,6 +7,7 @@ public class bullet : MonoBehaviour
 {
     private Rigidbody2D rb;
     public int bulletSpeed;
+    public int damage = 20;
     private Player player;
     public int destroyDistance;
     void Start()
@@ -23,6 +24,11 @@ public class bullet : MonoBehaviour
     {
         if(other.gameObject.layer == 8)
             Destroy(gameObject);
+        if (other.gameObject.layer == 14)
+        {
+            other.gameObject.GetComponent<HPCount>().hp -= damage;
+            Destroy(gameObject);
+        }
     }
 
     void Update()
