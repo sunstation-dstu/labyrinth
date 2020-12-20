@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// <summary>
 /// Класс Игрока
@@ -46,10 +48,14 @@ public class Player : MonoBehaviour
     /// Радиус проверки нахождения игрока на земле
     /// </summary>
     private const float GroundCheckingRadius = 0.2f;
+    private const float stopJumpingDistance = 1f;
 
     [HideInInspector]
     public bool isRight;
 
+    public Slider hpCount;
+    private HPCount hp;
+    
     /// <summary>
     /// Перечисление состояний движения
     /// </summary>
@@ -85,8 +91,6 @@ public class Player : MonoBehaviour
 
                 var movementSpeed = status.Equals(MovementStatuses.Walk) ? walkSpeed : runSpeed;
                 rigidBody.velocity = new Vector2(speedMultiplier * movementSpeed, rigidBody.velocity.y);
-
-                anim.SetBool(IsWalking, true);
                 break;
             case MovementStatuses.Jump:
                 anim.SetTrigger(JumpTrigger);
@@ -94,12 +98,19 @@ public class Player : MonoBehaviour
                 break;
         }
     }
+    
+    public void Death()
+    {
+        var activeScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(activeScene.buildIndex);
+    }
 
     private void Start()
     {
         isRight = true;
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
+        hp = GetComponent<HPCount>();
     }
 
     private void FixedUpdate()
@@ -109,15 +120,19 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        hpCount.value = hp.hp;
+        
         if (Input.GetAxis("Horizontal") != 0 && !Input.GetKey(KeyCode.LeftShift))
         {
             Movement(MovementStatuses.Walk, Input.GetAxis("Horizontal"));
-            anim.speed = 1.45f;
+            anim.SetBool(IsWalking, true);
+            anim.SetBool("IsRunning", false);
         }
         else if (Input.GetAxisRaw("Horizontal") != 0 && Input.GetKey(KeyCode.LeftShift))
         {
             Movement(MovementStatuses.Run, Input.GetAxis("Horizontal"));
-            anim.speed = 1.9f;
+            anim.SetBool(IsWalking, false);
+            anim.SetBool("IsRunning", true);
         }
         else Movement(MovementStatuses.Idle);
 
@@ -127,6 +142,17 @@ public class Player : MonoBehaviour
                 Movement(MovementStatuses.Jump);
         }
         
-        
+        RaycastHit2D[] allHit = Physics2D.RaycastAll(transform.position, Vector3.down, stopJumpingDistance);
+        for (int i = 0; i < allHit.Length; i++)
+        {
+            bool boofer = allHit[i].collider.gameObject.layer == 8;
+            if (i == allHit.Length-1 && boofer)
+                anim.SetBool("InFlight", false);
+            else if (i == allHit.Length-1 && !boofer)
+                anim.SetBool("InFlight", true);
+            print(boofer);
+        }
+        // TODO
+        Debug.DrawRay(transform.position,Vector3.down * stopJumpingDistance, Color.yellow);
     }
 }
