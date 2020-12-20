@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     public float distance;
     public float movementSpeed;
-    public int damage;
+    public byte damage;
 
     private string targetTag = "Player";
     private int raysCount = 12;

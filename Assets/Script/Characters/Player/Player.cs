@@ -50,6 +50,8 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public bool isRight;
 
+    public AudioSource JumpSound; // звук прыжка
+
     /// <summary>
     /// Перечисление состояний движения
     /// </summary>
@@ -124,7 +126,7 @@ public class Player : MonoBehaviour
         if (isOnGround)
         {
             if (Input.GetKeyDown(KeyCode.W))
-                Movement(MovementStatuses.Jump);
+            { Movement(MovementStatuses.Jump); JumpSound.Play(); } // звук прыжка
         }
         
         

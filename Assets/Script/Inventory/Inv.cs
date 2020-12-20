@@ -28,7 +28,7 @@ public class Inv : MonoBehaviour
     private cellSettings gt2;
     private UI inventoryUI;
 
-
+    public AudioSource SelectionSound; // звук подбора
 
     void Start()
     {
@@ -111,7 +111,7 @@ public class Inv : MonoBehaviour
                         }
                     }
                     if (isPickUp && isDestroy)
-                        Destroy(itItemObj);
+                        { Destroy(itItemObj); SelectionSound.Play(); } // звук прыжка
                     else if (!isPickUp)
                     {
                         inventoryUI.noPlace();
