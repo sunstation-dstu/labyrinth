@@ -6,17 +6,28 @@ using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
-    public GameObject inv;
+    private Inv inventory;
     [HideInInspector]
     public int childCountOther;
     GameObject other;
     GameObject gt; //Gun&Tool
+    [HideInInspector]
+    public cellSettings gt1;
+    private cellSettings gt2;
+    public GameObject attentionText;
+    private Text attentionTextEditor;
+    private Animator attentionTextAnim;
 
     void Start()
     {
+        inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inv>();
         gt = transform.Find("Gun & Tool").gameObject;
+        gt1 = gt.transform.Find("1").gameObject.GetComponent<cellSettings>();
+        gt2 = gt.transform.Find("2").gameObject.GetComponent<cellSettings>();
         other = transform.Find("Other").gameObject;
         childCountOther = other.transform.childCount;
+        attentionTextEditor = attentionText.GetComponent<Text>();
+        attentionTextAnim = attentionText.GetComponent<Animator>();
     }
 
     void Update()
@@ -30,7 +41,7 @@ public class UI : MonoBehaviour
             {
                 GameObject itemCell = findCell.transform.Find("Item").gameObject;
                 itemCell.SetActive(true);
-                itemCell.GetComponent<Image>().sprite = inv.GetComponent<Inv>().itemlist[cellID].icon;
+                itemCell.GetComponent<Image>().sprite = inventory.itemlist[cellID].icon;
             }
             else findCell.transform.Find("Item").gameObject.SetActive(false);
         }
@@ -43,20 +54,37 @@ public class UI : MonoBehaviour
             {
                 GameObject itemCell = findCell.transform.Find("Item").gameObject;
                 itemCell.SetActive(true);
-                itemCell.GetComponent<Image>().sprite = inv.GetComponent<Inv>().itemlist[cellID].icon;
+                itemCell.GetComponent<Image>().sprite = inventory.itemlist[cellID].icon;
             }
             else findCell.transform.Find("Item").gameObject.SetActive(false);
         }
 
         if (Input.GetKey(KeyCode.Alpha1))
         {
-            gt.transform.Find("1").gameObject.GetComponent<cellSettings>().active = true;
-            gt.transform.Find("2").gameObject.GetComponent<cellSettings>().active = false;
+            gt1.active = true;
+            gt2.active = false;
         }
         else if (Input.GetKey(KeyCode.Alpha2))
         {
-            gt.transform.Find("2").gameObject.GetComponent<cellSettings>().active = true;
-            gt.transform.Find("1").gameObject.GetComponent<cellSettings>().active = false;
+            gt2.active = true;
+            gt1.active = false;
         }
+    }
+
+    public void noPlace()
+    {
+        attentionTextEditor.text = "Нет места!";
+        attentionTextAnim.SetTrigger("attention");
+    }
+
+    public void reloading()
+    {
+        attentionTextAnim.SetBool("reload", true);
+        attentionTextEditor.text = $"Перезарядка...";
+    }
+
+    public void stopR()
+    {
+        attentionTextAnim.SetBool("reload", false);
     }
 }

@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - SwitchableSuite
+  - InventoryCell
+  - Guns
+  - Inventory
+  - LeftForearmLS
+  - RightForearmLS
   layers:
   - Default
   - TransparentFX
@@ -18,9 +23,9 @@ TagManager:
   - Player
   - NPC
   - Item
-  - 
-  - 
-  - 
+  - Gun
+  - Bullet
+  - Enemy
   - 
   - 
   - 

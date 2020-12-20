@@ -1,6 +1,6 @@
-﻿using System;
-using Unity.Mathematics;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// <summary>
 /// Класс Игрока
@@ -50,6 +50,12 @@ public class Player : MonoBehaviour
     private const float GroundCheckingRadius = 0.2f;
     private const float stopJumpingDistance = 1f;
 
+    [HideInInspector]
+    public bool isRight;
+
+    public Slider hpCount;
+    private HPCount hp;
+    
     /// <summary>
     /// Перечисление состояний движения
     /// </summary>
@@ -77,10 +83,11 @@ public class Player : MonoBehaviour
             case MovementStatuses.Walk:
                 // Совпадает ли фактическое направление движения (нажатие на клавиатуре) с
                 // действительным (направление спрайта игрока)
-                if (Input.GetAxis("Horizontal") > 0 && (transform.localScale.x < 0))
-                    transform.localScale = new Vector3(transform.localScale.x*-1, transform.localScale.y, transform.localScale.z);
-                else if (Input.GetAxis("Horizontal") < 0 && (transform.localScale.x > 0))
-                    transform.localScale = new Vector3(transform.localScale.x*-1, transform.localScale.y, transform.localScale.z);
+                if (Input.GetAxis("Horizontal") < 0 == isRight)
+                {
+                    isRight = !isRight;
+                    transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+                }
 
                 var movementSpeed = status.Equals(MovementStatuses.Walk) ? walkSpeed : runSpeed;
                 rigidBody.velocity = new Vector2(speedMultiplier * movementSpeed, rigidBody.velocity.y);
@@ -91,11 +98,19 @@ public class Player : MonoBehaviour
                 break;
         }
     }
+    
+    public void Death()
+    {
+        var activeScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(activeScene.buildIndex);
+    }
 
     private void Start()
     {
+        isRight = true;
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
+        hp = GetComponent<HPCount>();
     }
 
     private void FixedUpdate()
@@ -105,6 +120,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        hpCount.value = hp.hp;
+        
         if (Input.GetAxis("Horizontal") != 0 && !Input.GetKey(KeyCode.LeftShift))
         {
             Movement(MovementStatuses.Walk, Input.GetAxis("Horizontal"));
@@ -124,6 +141,7 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W))
                 Movement(MovementStatuses.Jump);
         }
+        
         RaycastHit2D[] allHit = Physics2D.RaycastAll(transform.position, Vector3.down, stopJumpingDistance);
         for (int i = 0; i < allHit.Length; i++)
         {
@@ -134,6 +152,7 @@ public class Player : MonoBehaviour
                 anim.SetBool("InFlight", true);
             print(boofer);
         }
+        // TODO
         Debug.DrawRay(transform.position,Vector3.down * stopJumpingDistance, Color.yellow);
     }
 }
