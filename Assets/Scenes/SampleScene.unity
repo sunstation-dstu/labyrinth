@@ -3846,6 +3846,10 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 2.3666434
       objectReference: {fileID: 0}
+    - target: {fileID: -1513462696954821347, guid: 9661ec54daf6b794aaa626cde18d8c90, type: 3}
+      propertyPath: hpCount
+      value: 
+      objectReference: {fileID: 583819428}
     - target: {fileID: 302876730746909852, guid: 9661ec54daf6b794aaa626cde18d8c90, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -9741,6 +9745,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4442188997633562550, guid: 284cdc616c089a843bc88bebffbded25, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442188997748255042, guid: 284cdc616c089a843bc88bebffbded25, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 4442188998497805525, guid: 284cdc616c089a843bc88bebffbded25, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.58
@@ -9788,6 +9800,14 @@ PrefabInstance:
     - target: {fileID: 4442188998497805530, guid: 284cdc616c089a843bc88bebffbded25, type: 3}
       propertyPath: m_Name
       value: EnemyPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442188998497805530, guid: 284cdc616c089a843bc88bebffbded25, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442188998981427040, guid: 284cdc616c089a843bc88bebffbded25, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 284cdc616c089a843bc88bebffbded25, type: 3}

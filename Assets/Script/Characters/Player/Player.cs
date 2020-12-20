@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// <summary>
 /// Класс Игрока
@@ -50,6 +52,9 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public bool isRight;
 
+    public Slider hpCount;
+    private HPCount hp;
+    
     /// <summary>
     /// Перечисление состояний движения
     /// </summary>
@@ -94,12 +99,19 @@ public class Player : MonoBehaviour
                 break;
         }
     }
+    
+    public void Death()
+    {
+        var activeScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(activeScene.buildIndex);
+    }
 
     private void Start()
     {
         isRight = true;
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
+        hp = GetComponent<HPCount>();
     }
 
     private void FixedUpdate()
@@ -109,6 +121,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        hpCount.value = hp.hp;
+        
         if (Input.GetAxis("Horizontal") != 0 && !Input.GetKey(KeyCode.LeftShift))
         {
             Movement(MovementStatuses.Walk, Input.GetAxis("Horizontal"));
